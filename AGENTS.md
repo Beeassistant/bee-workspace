@@ -40,6 +40,24 @@ When in doubt: Kimi first. Bring in Sonnet to verify if the stakes are high.
 
 Subagent model assignments are handled separately — don't assume all subagents use the default.
 
+## Prompt Caching
+
+Caching is enabled globally (`cache.enabled: true`, 5-minute TTL). Static workspace files get a 90% token discount on reuse.
+
+**Cache these (stable, reused every session):**
+- `SOUL.md`, `USER.md`, `IDENTITY.md`, `TOOLS.md`
+- Project reference docs (`REFERENCE.md`, specs, pricing)
+
+**Don't cache these (change frequently):**
+- `memory/YYYY-MM-DD.md` — daily notes
+- `MEMORY.md` — updated as patterns are learned
+- Tool outputs, search results
+
+**Maximize cache hits:**
+- Keep static files stable — edits invalidate the cache. Batch changes during maintenance, not mid-session.
+- Batch API calls within 5-minute windows — requests close together share the same cache
+- Separate stable reference docs from dynamic notes to avoid cache thrashing
+
 ## Rate Limits
 
 - 5 seconds minimum between API calls
