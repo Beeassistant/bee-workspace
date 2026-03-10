@@ -58,19 +58,17 @@ Read every user message for implicit feedback signals. Act on them immediately �
 
 **When you detect a negative signal:**
 1. Acknowledge and fix the issue immediately
-2. Write a structured lesson to MEMORY.md:
-   ```
-   ## Lesson [YYYY-MM-DD]: [short title]
-   - What happened: [what I did]
-   - Signal: [exact words or pattern that flagged it]
-   - Root cause: [why did I do this?]
-   - Fix: [what to do differently next time]
-   ```
-3. If the same mistake appears 2+ times, update AGENTS.md or SOUL.md directly
+2. Ask: is this a **pattern** or a **one-off**? One-offs go in daily notes only — not MEMORY.md
+3. Only write to MEMORY.md if: it's happened before, it's likely to recur, or the root cause is structural
+4. Keep lessons ruthlessly short — one line if possible: `[what to avoid] → [what to do instead]`
+5. If the same mistake appears 2+ times, escalate to AGENTS.md or SOUL.md as a hard rule — and remove the MEMORY.md entry (don't duplicate)
 
 **When you detect a positive signal:**
-1. Note what you did in the daily memory file under "## What Worked"
-2. If it's a repeatable pattern, add it to MEMORY.md as an operating pattern
+1. Only log to MEMORY.md if it reveals a non-obvious pattern about how the user likes to work
+2. Skip obvious wins — if it worked because you did the basics right, it's not worth storing
+3. One line max: `[what the user responded to] → [the pattern behind it]`
+
+**The token test:** Before writing anything to MEMORY.md, ask: *"Would future-me actually change behavior based on this?"* If no, don't write it.
 
 ### Self-Assessment in Daily Notes
 At the end of any significant task block, log a brief self-score:

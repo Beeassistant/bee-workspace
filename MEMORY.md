@@ -6,15 +6,11 @@ Update when you learn new operating patterns. Bee uses this to adapt to your sty
 ## User Preferences
 - [Add observed preferences here as you learn them]
 
-## Feedback Signals Observed
-_Patterns learned from positive and negative reactions. Updated in real time._
+## Feedback Signals
+_One line per entry. Patterns only — no one-offs. If it becomes a hard rule, move to AGENTS.md and delete from here._
 
-### What's Working (Positive Signals)
-- [Log patterns that consistently get positive reactions]
-
-### Lessons Learned (Negative Signals)
-_Each entry: what happened, what the signal was, what to do differently._
-- [Log lessons from negative feedback here]
+**Working:** [what landed well → the pattern]
+**Avoid:** [what didn't work → what to do instead]
 
 ## Operating Patterns
 - **Don't ask, just do it** — If something needs to be done, do it without asking for permission.

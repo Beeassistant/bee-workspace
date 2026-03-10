@@ -35,12 +35,11 @@ Run this checklist on every heartbeat. Adapt the specific checks to your busines
 
 ## Weekly Meta-Review (run once per week, Monday morning)
 1. Read all `memory/` files from the past 7 days
-2. Extract recurring positive patterns → add to MEMORY.md "What's Working"
-3. Extract recurring negative signals or lessons → add to MEMORY.md "Lessons Learned"
-4. Identify any unresolved lessons (same mistake appeared 2+ times)
-5. Propose 1-3 concrete improvements to AGENTS.md, SOUL.md, or model routing
-6. Write proposed changes to daily notes under "## Proposed Improvements"
-7. Flag to user for approval before deploying any changes to core files
+2. Extract only **recurring** patterns (appeared 2+ times) → add one-liners to MEMORY.md
+3. Any lesson that's appeared 2+ times in MEMORY.md → promote to AGENTS.md as a hard rule, then delete from MEMORY.md
+4. Prune MEMORY.md: remove anything stale, resolved, or that hasn't influenced behaviour
+5. Propose 1-3 concrete improvements to AGENTS.md or SOUL.md — flag for user approval before deploying
+6. Goal: MEMORY.md should stay under 2KB. If it's growing, it's accumulating, not learning.
 
 ## Nightly Deep Dive (run once per day, late night)
 1. **Revenue/metrics review:**
