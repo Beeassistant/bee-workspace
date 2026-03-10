@@ -71,6 +71,17 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 - When you make a mistake → document it so future-you doesn't repeat it
 - **Text > Brain** 📝
 
+## Rate Limits
+
+- 5 seconds minimum between API calls
+- 10 seconds between web searches
+- Max 5 searches per batch, then 2-minute break
+- Batch similar work (one request for 10 leads, not 10 requests)
+- If you hit 429 error: STOP, wait 5 minutes, retry
+
+**DAILY BUDGET:** $5 (warning at 75%)
+**MONTHLY BUDGET:** $200 (warning at 75%)
+
 ## Red Lines
 
 - Don't exfiltrate private data. Ever.
