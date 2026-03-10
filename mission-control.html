@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission Control | Linz</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0f;
+            color: #e4e4e7;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        header {
+            border-bottom: 2px solid #22c55e;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 28px;
+            color: #22c55e;
+            margin-bottom: 5px;
+        }
+        .last-updated {
+            color: #71717a;
+            font-size: 14px;
+        }
+        .project-card {
+            background: #18181b;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            border: 1px solid #27272a;
+        }
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .project-title {
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .status-badge {
+            font-size: 11px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+        .badge-active { background: #166534; color: #4ade80; }
+        .badge-building { background: #7c2d12; color: #fb923c; }
+        .badge-ideation { background: #312e81; color: #a5b4fc; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #27272a;
+        }
+        th {
+            color: #71717a;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+        td {
+            font-size: 14px;
+        }
+        .highlight { color: #22c55e; font-weight: 600; }
+        .warning { color: #f59e0b; }
+        .blocker-row { background: #450a0a; }
+        .summary-bar {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .summary-item {
+            background: #18181b;
+            padding: 15px 25px;
+            border-radius: 8px;
+            border-left: 3px solid;
+        }
+        .summary-item.active { border-color: #22c55e; }
+        .summary-item.building { border-color: #f59e0b; }
+        .summary-item.ideation { border-color: #6366f1; }
+        @media (max-width: 600px) {
+            h1 { font-size: 24px; }
+            th, td { padding: 10px; font-size: 13px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 Mission Control</h1>
+            <div class="last-updated">Last updated: Tue 10 Mar 2026, 17:08 GMT+7</div>
+        </header>
+
+        <div class="summary-bar">
+            <div class="summary-item active">
+                <div style="font-size: 12px; color: #71717a;">Active</div>
+                <div style="font-size: 24px; font-weight: 600; color: #4ade80;">1</div>
+            </div>
+            <div class="summary-item building">
+                <div style="font-size: 12px; color: #71717a;">Building</div>
+                <div style="font-size: 24px; font-weight: 600; color: #fb923c;">2</div>
+            </div>
+            <div class="summary-item ideation">
+                <div style="font-size: 12px; color: #71717a;">Ideation</div>
+                <div style="font-size: 24px; font-weight: 600; color: #a5b4fc;">2</div>
+            </div>
+        </div>
+        <div class="project-card">
+            <div class="project-header">
+                <div class="project-title">🐝 Bee TV</div>
+                <span class="status-badge badge-active">Active</span>
+            </div>
+            <table>
+                <tr><th>Metric</th><th>Status</th></tr>
+                <tr><td>Phase</td><td>Growth (word-of-mouth only)</td></tr>
+                <tr><td>Customers</td><td class="highlight">1 active</td></tr>
+                <tr><td>Pricing</td><td>$95/year or $55/6mo</td></tr>
+                <tr><td>Margin</td><td class="highlight">~$57/year per sub</td></tr>
+                <tr><td>Next Action</td><td>Identify next prospect via referral</td></tr>
+                <tr class="blocker-row"><td>Blockers</td><td class="warning">None — careful growth needed</td></tr>
+            </table>
+        </div>
+        <div class="project-card">
+            <div class="project-header">
+                <div class="project-title">📌 Awin Affiliate</div>
+                <span class="status-badge badge-building">Building</span>
+            </div>
+            <table>
+                <tr><th>Metric</th><th>Status</th></tr>
+                <tr><td>Phase</td><td>Content channel setup</td></tr>
+                <tr><td>Primary Channel</td><td>Pinterest</td></tr>
+                <tr><td>Connected</td><td>[Awaiting list]</td></tr>
+                <tr class="blocker-row"><td>Blockers</td><td class="warning">Waiting: Company list (GDrive)</td></tr>
+            </table>
+        </div>
+        <div class="project-card">
+            <div class="project-header">
+                <div class="project-title">🎓 AI Curriculum</div>
+                <span class="status-badge badge-building">Building</span>
+            </div>
+            <table>
+                <tr><th>Metric</th><th>Status</th></tr>
+                <tr><td>Phase</td><td>Curriculum development</td></tr>
+                <tr><td>Model</td><td>Social enterprise</td></tr>
+                <tr><td>Connections</td><td class="highlight">Strong school network ✓</td></tr>
+                <tr><td>Notes</td><td>Linz's baby — decisions through her</td></tr>
+                <tr class="blocker-row"><td>Blockers</td><td class="warning">Waiting: Whiteboard access</td></tr>
+            </table>
+        </div>
+        <div class="project-card">
+            <div class="project-header">
+                <div class="project-title">📱 Content Monetisation</div>
+                <span class="status-badge badge-ideation">Ideation</span>
+            </div>
+            <table>
+                <tr><th>Metric</th><th>Status</th></tr>
+                <tr><td>Angle 1</td><td>Cambodia Life (English)</td></tr>
+                <tr><td>Angle 2</td><td>AI for Kids (EN/KH)</td></tr>
+                <tr><td>Platforms</td><td>TBD (Pinterest confirmed)</td></tr>
+            </table>
+        </div>
+        <div class="project-card">
+            <div class="project-header">
+                <div class="project-title">💡 Apps & Digital Products</div>
+                <span class="status-badge badge-ideation">Ideation</span>
+            </div>
+            <table>
+                <tr><th>Metric</th><th>Status</th></tr>
+                <tr><td>Phase</td><td>Idea generation</td></tr>
+                <tr><td>Approach</td><td>Vibe coding</td></tr>
+                <tr><td>Notes</td><td class="highlight">Bee full autonomy ✓</td></tr>
+            </table>
+        </div>
+        <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #27272a; color: #71717a; font-size: 12px; text-align: center;">
+            <p>Built by Bee 🐝 | Updates automatically | <a href="mission-control.md" style="color: #71717a;">View raw data</a></p>
+        </footer>
+    </div>
+</body>
+</html>
