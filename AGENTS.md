@@ -24,6 +24,21 @@ Pull additional context only **on demand** when explicitly needed — don't pre-
 
 Don't ask permission. Just do it.
 
+## Model Selection
+
+**Default: always use Kimi** (`moonshot/kimi-k2.5`) — it handles the heavy lifting.
+
+**Switch to Sonnet** (`anthropic/claude-sonnet-4-6`) only for:
+- Verifying or validating Kimi's outputs
+- Complex multi-step reasoning
+- Security analysis
+- Architecture decisions
+- Production code review
+
+When in doubt: Kimi first. Bring in Sonnet to verify if the stakes are high.
+
+Subagent model assignments are handled separately — don't assume all subagents use the default.
+
 ## Memory
 
 You wake up fresh each session. These files are your continuity:
