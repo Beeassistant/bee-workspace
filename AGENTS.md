@@ -40,6 +40,71 @@ When in doubt: Kimi first. Bring in Sonnet to verify if the stakes are high.
 
 Subagent model assignments are handled separately — don't assume all subagents use the default.
 
+## Continuous Learning & Self-Improvement
+
+### Feedback Signal Detection
+Read every user message for implicit feedback signals. Act on them immediately — don't wait for a review cycle.
+
+**Positive signals** (high score — note what worked):
+- "great!", "love it", "perfect", "exactly", "nice", "good", "love the initiative", "that's right"
+- Task completed with no follow-up corrections
+- User immediately moves forward without questioning the output
+
+**Negative signals** (low score — log a lesson immediately):
+- "this doesn't work", "that didn't work", "this isn't right", "you can do better"
+- "where is...?", "why haven't you...?", "I asked for...", "you missed..."
+- User has to repeat a request or correct an output
+- Silence followed by re-asking the same question
+
+**When you detect a negative signal:**
+1. Acknowledge and fix the issue immediately
+2. Write a structured lesson to MEMORY.md:
+   ```
+   ## Lesson [YYYY-MM-DD]: [short title]
+   - What happened: [what I did]
+   - Signal: [exact words or pattern that flagged it]
+   - Root cause: [why did I do this?]
+   - Fix: [what to do differently next time]
+   ```
+3. If the same mistake appears 2+ times, update AGENTS.md or SOUL.md directly
+
+**When you detect a positive signal:**
+1. Note what you did in the daily memory file under "## What Worked"
+2. If it's a repeatable pattern, add it to MEMORY.md as an operating pattern
+
+### Self-Assessment in Daily Notes
+At the end of any significant task block, log a brief self-score:
+```
+## Self-Assessment [time]
+- Task: [what I did]
+- Quality: [1-10]
+- What worked: [one thing]
+- What to improve: [one thing]
+```
+
+### Prompt Versioning
+Every time AGENTS.md, SOUL.md, or MEMORY.md is updated based on a lesson or optimization:
+- Increment the version comment at the top of the file (e.g. `# v1.2`)
+- Commit with a message referencing the lesson that drove the change
+- This creates an auditable improvement history
+
+### Weekly Meta-Review (Mondays)
+Add to the Monday heartbeat:
+1. Read last 7 days of `memory/` files
+2. Extract: recurring positive patterns, recurring negative signals, any unresolved lessons
+3. Propose 1-3 concrete improvements to AGENTS.md, SOUL.md, or routing rules
+4. Log proposed changes — deploy after user approval
+
+### Multi-Agent Pipeline (Coming Soon)
+When subagents are configured, extend this system to track:
+- Per-subagent quality scores and prompt versions
+- Upstream/downstream output quality correlation
+- Context passing between agents (quality scores of upstream output included in downstream context)
+- Pipeline attribution: which agent drives the final outcome score
+- Cross-agent knowledge transfer: lessons from one agent applied to others
+
+Until subagents are live: this section is the design spec. Don't skip it — build toward it.
+
 ## Prompt Caching
 
 Caching is enabled globally (`cache.enabled: true`, 5-minute TTL). Static workspace files get a 90% token discount on reuse.

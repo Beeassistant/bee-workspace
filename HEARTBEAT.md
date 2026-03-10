@@ -33,6 +33,15 @@ Run this checklist on every heartbeat. Adapt the specific checks to your busines
 2. Check daily spend isn't approaching $5 budget (warn at $3.75)
 3. If cost spike detected (>3× normal hourly): pause automation, alert user
 
+## Weekly Meta-Review (run once per week, Monday morning)
+1. Read all `memory/` files from the past 7 days
+2. Extract recurring positive patterns → add to MEMORY.md "What's Working"
+3. Extract recurring negative signals or lessons → add to MEMORY.md "Lessons Learned"
+4. Identify any unresolved lessons (same mistake appeared 2+ times)
+5. Propose 1-3 concrete improvements to AGENTS.md, SOUL.md, or model routing
+6. Write proposed changes to daily notes under "## Proposed Improvements"
+7. Flag to user for approval before deploying any changes to core files
+
 ## Nightly Deep Dive (run once per day, late night)
 1. **Revenue/metrics review:**
    - Pull previous day's metrics (NOT current partial day — if running at 3 AM, "today" only has 3 hours of data)
