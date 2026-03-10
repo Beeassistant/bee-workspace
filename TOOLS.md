@@ -118,6 +118,13 @@ Keys must be rotated every 90 days. Warn at 80 days.
 4. Revoke old key in Anthropic dashboard
 5. Update the table above
 
+## Morning Brief News Sources
+
+**Reliable general news:** Reuters, BBC, Al Jazeera, AP, AFP  
+**Tech/AI news:** Ars Technica, MIT Technology Review, IEEE Spectrum, Nature AI, official company blogs (OpenAI, Anthropic, Google AI) — avoid hearsay, unverified Twitter/X threads, rumor sites  
+**Cambodia news:** The Phnom Penh Post, Khmer Times, Reuters regional desk  
+**Search strategy:** Web search limited to above domains, first 3 results only to minimize tokens (~$0.02-0.05 per search)
+
 ## Exec Timeout Defaults
 
 | Category | yieldMs | timeout | Example |
