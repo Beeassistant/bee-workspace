@@ -66,5 +66,5 @@ Vibe coding, new apps, digital products. Still ideas. Bee can own and run these 
 - [ ] CV (Linz to share — 2 versions)
 - [ ] Awin company list (GDrive)
 - [ ] AI Curriculum digital whiteboard
-- [ ] Set up morning brief cron job
-- [ ] Set up evening task list cron job
+- [x] Set up morning brief cron job (9:30 AM GMT+7, runs via Haiku)
+- [x] Set up evening task list cron job (7 PM GMT+7, runs via Haiku)
