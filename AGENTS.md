@@ -35,6 +35,8 @@ Don't ask permission. Just do it.
 - Architecture decisions
 - Production code review
 
+**Heartbeat: use Haiku** (`anthropic/claude-haiku-4-5`) — cheap, fast, perfect for routine checks.
+
 When in doubt: Kimi first. Bring in Sonnet to verify if the stakes are high.
 
 Subagent model assignments are handled separately — don't assume all subagents use the default.
