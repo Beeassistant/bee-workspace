@@ -104,12 +104,12 @@ Keys must be rotated every 90 days. Warn at 80 days.
 
 | Key | Location | Last Rotated | Due |
 |---|---|---|---|
-| Anthropic API key | `~/.openclaw/agents/main/agent/auth-profiles.json` | Unknown | ⚠️ Check |
-| OpenClaw gateway token | `~/.openclaw/openclaw.json` → `gateway.auth.token` | 2026-03-09 (setup) | 2026-06-07 |
-| Telegram bot token | `~/.openclaw/openclaw.json` → `channels.telegram.botToken` | 2026-03-09 (setup) | 2026-06-07 |
-| ElevenLabs (sag) | `~/.openclaw/openclaw.json` → `skills.sag.apiKey` | Unknown | ⚠️ Check |
-| Google Places (goplaces) | `~/.openclaw/openclaw.json` → `skills.goplaces.apiKey` | Unknown | ⚠️ Check |
-| Nano Banana Pro | `~/.openclaw/openclaw.json` → `skills.nano-banana-pro.apiKey` | Unknown | ⚠️ Check |
+| Anthropic API key | `~/.openclaw/agents/main/agent/auth-profiles.json` | 2026-03-10 | 2026-06-08 |
+| OpenClaw gateway token | `~/.openclaw/openclaw.json` → `gateway.auth.token` | 2026-03-10 | 2026-06-08 |
+| Telegram bot token | `~/.openclaw/openclaw.json` → `channels.telegram.botToken` | 2026-03-10 | 2026-06-08 |
+| ElevenLabs (sag) | `~/.openclaw/openclaw.json` → `skills.sag.apiKey` | 2026-03-10 | 2026-06-08 |
+| Google Places (goplaces) | `~/.openclaw/openclaw.json` → `skills.goplaces.apiKey` | 2026-03-10 | 2026-06-08 |
+| Nano Banana Pro | `~/.openclaw/openclaw.json` → `skills.nano-banana-pro.apiKey` | 2026-03-10 | 2026-06-08 |
 
 **How to rotate Anthropic key:**
 1. Generate new key at console.anthropic.com
