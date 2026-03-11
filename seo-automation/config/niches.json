@@ -1,0 +1,18 @@
+{
+  "primary_niches": [
+    "Cambodia travel",
+    "expat life Cambodia",
+    "Phnom Penh living",
+    "Siem Reap travel"
+  ],
+  "subreddits": [
+    "cambodia",
+    "phnompenh",
+    "travel",
+    "expats",
+    "digitalnomad"
+  ],
+  "target_keywords_per_day": 5,
+  "articles_per_day": 1,
+  "min_trend_score": 70
+}

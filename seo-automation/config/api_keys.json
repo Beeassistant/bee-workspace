@@ -1,0 +1,9 @@
+{
+  "brave_search_api_key": "ADD_YOUR_KEY",
+  "reddit_client_id": "ADD_YOUR_ID",
+  "reddit_client_secret": "ADD_YOUR_SECRET",
+  "newsapi_key": "ADD_YOUR_KEY",
+  "wordpress_url": "https://yourblog.com",
+  "wordpress_username": "your_username",
+  "wordpress_app_password": "your_app_password"
+}
