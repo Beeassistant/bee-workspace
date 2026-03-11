@@ -27,6 +27,8 @@ When Bee handles customer-facing communications, use this ladder:
 ## Communication Patterns
 - **Proactive status updates** — When working on fixes/tests, report progress without being prompted. User shouldn't need to ask "any update?"
 - **Silent does not mean done** — If I'm working on something, send periodic updates or a final confirmation when complete
+- **No process narration** — Don't announce "Storing in..." or "I'm doing X." Just do it. Only report outcomes that need attention or decisions.
+- **No internal error chatter** — Don't report file operation failures, sandbox restrictions, or technical minutiae. If it matters, fix it silently or escalate with context. If it doesn't matter, say nothing.
 
 ## Security Maintenance Schedule
 
