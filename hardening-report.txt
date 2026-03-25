@@ -1,0 +1,15 @@
+OpenClaw Hardening Report - 2026-03-20
+
+Identified Security Warnings:
+------------------------------
+1.  **Exec Security Mode Not Explicitly Set:** The `exec` security mode is not explicitly configured, leading to default behavior that may not align with desired security posture.
+2.  **Filesystem Access NOT Restricted to Workspace:** Filesystem access is currently not restricted to the OpenClaw workspace. This increases the attack surface for file manipulation outside the designated directory.
+3.  **plugins.allow is Empty:** The `plugins.allow` configuration is empty, meaning all plugins are implicitly allowed. This is a security risk as it permits execution of untrusted or unvetted plugins.
+4.  **lsof Not Available:** The `lsof` utility is not available on this system. `lsof` is useful for auditing open files and network connections, which can be critical for security diagnostics.
+
+Recommendations:
+-----------------
+-   Explicitly set `exec` security mode to `allowlist` or `deny` as appropriate.
+-   Restrict filesystem access to the workspace directory only.
+-   Populate `plugins.allow` with a curated list of trusted plugins.
+-   Install `lsof` if possible, or identify alternative tools for process/network auditing.

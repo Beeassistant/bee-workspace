@@ -122,7 +122,7 @@ Keys must be rotated every 90 days. Warn at 80 days.
 
 **Reliable general news:** Reuters, BBC, Al Jazeera, AP, AFP  
 **Tech/AI news:** Ars Technica, MIT Technology Review, IEEE Spectrum, Nature AI, official company blogs (OpenAI, Anthropic, Google AI) — avoid hearsay, unverified Twitter/X threads, rumor sites  
-**Cambodia news:** The Phnom Penh Post, Khmer Times, Reuters regional desk  
+**Cambodia news:** Khmer Times (https://www.khmertimeskh.com/), Phnom Penh Post (https://www.phnompenhpost.com/), Cambodia Daily (https://www.cambodiadaily.com/) — ALWAYS link to exact story URL, never just the homepage  
 **Search strategy:** Web search limited to above domains, first 3 results only to minimize tokens (~$0.02-0.05 per search)
 
 ## Exec Timeout Defaults

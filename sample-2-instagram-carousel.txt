@@ -1,0 +1,40 @@
+SAMPLE PORTFOLIO: "Why Every Indie Hacker Should Build in Public"
+Source article: https://ekofi.substack.com/p/why-every-indie-hacker-should-build
+---
+
+ASSET 4: INSTAGRAM CAROUSEL
+============================
+
+Slide 1 (Cover):
+Headline: "BUILD IN PUBLIC 🚀"
+Subtext: "Why it's your indie hacker superpower. Swipe to learn more! →"
+
+Slide 2:
+Headline: "What is it?"
+Body: "Share your journey (wins, losses, behind-the-scenes). Your audience grows *with* you, not just *after* you launch. Authenticity wins! 💖"
+
+Slide 3:
+Headline: "Builds Trust & Credibility"
+Body: "Transparency fosters empathy. Show your roadmap, lessons, even struggles. People buy into people they trust. It's rare & powerful. ✨"
+
+Slide 4:
+Headline: "FREE Marketing Engine"
+Body: "Every update is content! Attract a tribe of early adopters & advocates. Stop chasing followers; let them find you organically. 📈"
+
+Slide 5:
+Headline: "Real-Time Feedback"
+Body: "Your audience becomes your live focus group! Get ideas, bug reports, and validation *before* you build. Build better, faster. 🛠️"
+
+Slide 6:
+Headline: "Accountability = Consistency"
+Body: "Public goals keep you on track. You'll be more consistent, leading to faster progress. No more secret projects dying! ✅"
+
+Slide 7:
+Headline: "Set Your Boundaries"
+Body: "'Public' doesn't mean 'everything.' Share strategically (progress, features). Keep sensitive data private. Intentional transparency. 🔒"
+
+Slide 8 (CTA):
+Headline: "Ready to start?"
+Body: "One honest post is all it takes. Share your journey, connect deeper, build faster. Your superpower awaits! 🐝"
+CTA: "Save this post! Share with a founder friend."
+

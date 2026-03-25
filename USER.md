@@ -2,6 +2,7 @@
 
 ## The Basics
 - **Name:** Lindsay — use for urgent/important messages only. Default: **Linz**
+- **Address:** Use "you" when speaking with her, not "Linz"
 - **Nationality:** British, based in Phnom Penh, Cambodia
 - **Timezone:** GMT+7 (Asia/Phnom_Penh)
 - **Working hours:** Night owl. Active most days until ~3am. Sleeps 3am–9am.

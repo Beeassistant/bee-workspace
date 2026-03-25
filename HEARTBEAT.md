@@ -2,6 +2,23 @@
 
 Run this checklist on every heartbeat. Adapt the specific checks to your business.
 
+## ⚠️ MANDATORY: Read All Telegram Discussion Threads FIRST
+**Before generating ANY progress report, morning brief, or status update, you MUST:**
+1. Read `MEMORY.md` → Section "Project Memory System" → Thread-to-Project Mapping table
+2. For EACH project/thread listed, read the corresponding `projects/*.md` file
+3. Synthesize all updates from ALL threads before including them in any progress report
+
+**All Telegram threads to check (read `projects/*.md` for each):**
+- Thread 36: `projects/bee-personal.md` (Bee's Personal Project)
+- Thread 37: `projects/bee-tv.md` (Bee TV)
+- Thread 38: `projects/affiliate-awin.md` (Affiliate Marketing - Awin)
+- Thread 39: `projects/ai-for-kids.md` (AI for Kids)
+- Thread 40: `projects/digital-products.md` (Digital Products)
+- Thread 41: `projects/content-monetisation.md` (Content Monetisation)
+- General: `projects/general.md` (General/Maintenance)
+
+**This is non-negotiable.** A progress report that ignores active threads is incomplete and unacceptable.
+
 ## Execution Check (every heartbeat)
 1. Read today's plan from `memory/YYYY-MM-DD.md` under "## Today's Plan"
 2. Check progress against each planned item — what's done, what's blocked, what's next
@@ -13,6 +30,23 @@ Run this checklist on every heartbeat. Adapt the specific checks to your busines
 1. Check all production sites return 200 with expected content
 2. If any site is down, **alert the user immediately**
 3. If it's a deployment issue you can fix, fix it first, then alert with what happened
+
+## Revenue & Social Media Status (every heartbeat)
+**Check and report ALL of the following:**
+
+### Sales Platforms
+- **Gumroad:** Check API for new sales since last check. Report: total sales count, revenue, any new orders.
+- **ClawMart:** Check email for new sales notifications. Report: total sales count, revenue, any new orders.
+
+### X/Twitter Activity (if @bee_h_q is active)
+- Report last 3 posts (time posted GMT+7, content summary)
+- Report engagement metrics if available (views, likes, retweets, replies)
+- Report next scheduled post time
+- Report any account issues (warnings, bans, restrictions)
+- **DO NOT skip this — X/Twitter is an active revenue channel**
+
+### Other Active Social Channels
+- Report status of any other active social accounts (Pinterest, LinkedIn, etc.) — what was posted, engagement, any issues
 
 ## Long-Running Agent Health Check (every heartbeat)
 1. Read `memory/YYYY-MM-DD.md` for listed active tmux sessions (under "Active Long-Running Processes")

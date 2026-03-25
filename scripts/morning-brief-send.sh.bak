@@ -1,0 +1,154 @@
+#!/bin/bash
+# Morning Brief — runs at 9 AM GMT+7 via launchd
+# Lock file prevents duplicate sends
+
+LOCK_FILE="/tmp/morning-brief.lock"
+if [ -f "$LOCK_FILE" ]; then
+    # echo "Already running"
+    exit 0
+fi
+touch "$LOCK_FILE"
+trap "rm -f $LOCK_FILE" EXIT
+
+BOT_TOKEN="8443094993:AAHOfwS0WbbuXBb0dmQxHUKQajabjt6gDoA"
+CHAT_ID="775618616"
+
+cd ~/.openclaw/workspace
+DATE_FORMATTED=$(date '+%B %d')
+
+# Witty Greeting
+GREETINGS=(
+    "🌅 Rise and shine!"
+    "☕️ Morning, boss."
+    "👋 Another day, another dollar... or a million."
+    "🚀 Let's make some magic happen."
+    "💡 What's the plan of attack today?"
+)
+GREETING=${GREETINGS[$(( RANDOM % ${#GREETINGS[@]} ))]}
+
+# Weather
+WEATHER_RAW=$(curl -s 'wttr.in/Phnom+Penh?format=%C+%t' 2>/dev/null | sed 's/+/+/' || echo "Weather unavailable")
+
+# Projects Summary (Based on USER.md and Awin list)
+PROJECTS_SUMMARY=""
+PROJECTS_SUMMARY+="Bee TV - Active, 1 customer, hardware research done.\n"
+PROJECTS_SUMMARY+="Affiliate - 11 companies joined, UGC strategy needed.\n"
+PROJECTS_SUMMARY+="AI Curriculum - Ideation, strong school connections, need docs.\n"
+PROJECTS_SUMMARY+="Content Monetization - Building, SEO + UGC guides ready for deployment.\n"
+PROJECTS_SUMMARY+="Digital Products - Ideation, autonomous creation mode."
+
+# Blockers (things I need from you)
+BLOCKERS_RAW=$(grep -A 10 "## Blockers\|### Blockers\|waiting on\|pending from" memory/$(date +%Y-%m-%d).md 2>/dev/null | grep "^- \|• " | head -3 | sed 's/^- /• /' || echo "")
+
+if [ -n "$BLOCKERS_RAW" ]; then
+    BLOCKERS_SECTION="🚨 Blockers (on you):\n${BLOCKERS_RAW}"
+else
+    BLOCKERS_SECTION="🚨 Blockers (on you):\n• None - ready to execute"
+fi
+
+# Completed Work from Last Night (from yesterday's memory)
+YESTERDAY=$(date -v-1d +%Y-%m-%d 2>/dev/null || date -d "yesterday" +%Y-%m-%d)
+COMPLETED_WORK_RAW=$(grep -A 20 "## What Got Done" ~/.openclaw/workspace/memory/${YESTERDAY}.md 2>/dev/null | grep "^- \[x\]" | head -3 | sed 's/- \[x\]/•/' || echo "")
+
+# Add $1k plan link if it was supposed to be delivered
+ONE_K_PLAN_LINK="https://drive.google.com/file/d/18Oi0NxiTda0FBP5l2ltK_7XCf-tQ-4iQ" # Placeholder for actual link after upload
+if grep -q "$1,000-in-7-days business plan" ~/.openclaw/workspace/memory/${YESTERDAY}.md; then
+    if [ -n "$COMPLETED_WORK_RAW" ]; then
+        COMPLETED_WORK_RAW="${COMPLETED_WORK_RAW}\n• $1k-in-7-days plan completed — ${ONE_K_PLAN_LINK}"
+    else
+        COMPLETED_WORK_RAW="• $1k-in-7-days plan completed — ${ONE_K_PLAN_LINK}"
+    fi
+fi
+
+if [ -n "$COMPLETED_WORK_RAW" ]; then
+    COMPLETED_WORK_SECTION="👀 Review completed work from night shift:\n${COMPLETED_WORK_RAW}"
+else
+    COMPLETED_WORK_SECTION="👀 Review completed work from night shift:\n• Nothing explicitly completed last night."
+fi
+
+# News Fetching & Curation
+NEWS_SECTION="📰 Today in news:\n"
+
+# AI/Tech News - prioritize relevant updates
+TECH_NEWS=""
+TECH_RSS_TC=$(curl -s 'https://techcrunch.com/category/artificial-intelligence/feed/' 2>/dev/null)
+TECH_RSS_ARS=$(curl -s 'http://feeds.arstechnica.com/arstechnica/technology-lab' 2>/dev/null)
+
+# Try TechCrunch first
+TC_TITLE=$(echo "$TECH_RSS_TC" | grep -o '<title>[^<]*</title>' | sed -n '3p' | sed 's/<title>//;s/<\/title>//;s/&#8217;/'\''/g;s/&#8216;/'\''/g')
+TC_URL=$(echo "$TECH_RSS_TC" | grep -o '<link>[^<]*</link>' | sed -n '3p' | sed 's/<link>//;s/<\/link>//')
+if [ -n "$TC_TITLE" ] && [ -n "$TC_URL" ]; then
+    TECH_NEWS+="• ${TC_TITLE} — ${TC_URL}\n"
+fi
+
+# Try Ars Technica if TechCrunch didn't yield 2
+if [ -n "$TECH_RSS_ARS" ] && [ $(echo "$TECH_NEWS" | wc -l) -lt 2 ]; then
+    ARS_TITLE=$(echo "$TECH_RSS_ARS" | grep -o '<title>[^<]*</title>' | sed -n '3p' | sed 's/<title>//;s/<\/title>//')
+    ARS_URL=$(echo "$TECH_RSS_ARS" | grep -o '<link rel="alternate" type="text/html" href="[^"]*"' | head -1 | sed 's/.*href="//;s/"$//')
+    if [ -n "$ARS_TITLE" ] && [ -n "$ARS_URL" ]; then
+        TECH_NEWS+="• ${ARS_TITLE} — ${ARS_URL}\n"
+    fi
+fi
+
+# Fallback if no tech news
+if [ -z "$TECH_NEWS" ]; then
+    NEWS_SECTION+="• AI/Tech news pending (sources unavailable)\n"
+else
+    NEWS_SECTION+="${TECH_NEWS}"
+fi
+
+# World News - multiple sources, check for cross-reporting
+WORLD_NEWS=""
+WORLD_RSS_BBC=$(curl -s 'http://feeds.bbci.co.uk/news/world/rss.xml' 2>/dev/null)
+WORLD_RSS_REUTERS=$(curl -s 'https://www.reutersagency.com/feed/?taxonomy=markets&post_type=reuters-best' 2>/dev/null)
+
+# Try BBC
+BBC_TITLE=$(echo "$WORLD_RSS_BBC" | grep -o '<title>[^<]*</title>' | sed -n '3p' | sed 's/<title>//;s/<\/title>//')
+BBC_URL=$(echo "$WORLD_RSS_BBC" | grep -o '<link>[^<]*</link>' | sed -n '3p' | sed 's/<link>//;s/<\/link>//')
+if [ -n "$BBC_TITLE" ] && [ -n "$BBC_URL" ]; then
+    WORLD_NEWS+="• ${BBC_TITLE} — ${BBC_URL}\n"
+fi
+
+# Try Reuters if BBC didn't yield 2
+if [ -n "$WORLD_RSS_REUTERS" ] && [ $(echo "$WORLD_NEWS" | wc -l) -lt 2 ]; then
+    REUTERS_TITLE=$(echo "$WORLD_RSS_REUTERS" | grep -o '<title>[^<]*</title>' | sed -n '3p' | sed 's/<title>//;s/<\/title>//')
+    REUTERS_URL=$(echo "$WORLD_RSS_REUTERS" | grep -o '<link>[^<]*</link>' | sed -n '3p' | sed 's/<link>//;s/<\/link>//')
+    if [ -n "$REUTERS_TITLE" ] && [ -n "$REUTERS_URL" ]; then
+        WORLD_NEWS+="• ${REUTERS_TITLE} — ${REUTERS_URL}\n"
+    fi
+fi
+
+if [ -z "$WORLD_NEWS" ]; then
+    NEWS_SECTION+="• World news pending (sources unavailable)\n"
+else
+    NEWS_SECTION+="${WORLD_NEWS}"
+fi
+
+# Cambodia News - English only
+CAMBODIA_NEWS=""
+KH_TIMES_RSS=$(curl -s 'https://www.khmertimeskh.com/feed/' 2>/dev/null)
+
+# Try Khmer Times
+KH_TITLE=$(echo "$KH_TIMES_RSS" | grep -o '<title>[^<]*</title>' | sed -n '3p' | sed 's/<title>//;s/<\/title>//')
+KH_URL=$(echo "$KH_TIMES_RSS" | grep -o '<link>[^<]*</link>' | sed -n '3p' | sed 's/<link>//;s/<\/link>//')
+if [ -n "$KH_TITLE" ] && [ -n "$KH_URL" ]; then
+    CAMBODIA_NEWS+="• ${KH_TITLE} — ${KH_URL}\n"
+fi
+
+if [ -z "$CAMBODIA_NEWS" ]; then
+    NEWS_SECTION+="• Cambodia news pending (sources unavailable)\n"
+else
+    NEWS_SECTION+="${CAMBODIA_NEWS}"
+fi
+
+# User Priorities (from today's memory)
+USER_PRIORITIES=$(grep -A 10 "## Your Priorities\|## Today's Plan" ~/.openclaw/workspace/memory/$(date +%Y-%m-%d).md 2>/dev/null | grep "^- \[ \]" | head -3 | sed 's/- \[ \]/•/' || echo "• No explicit priorities. Review current status.")
+
+MSG="${GREETING} $DATE_FORMATTED\n\n☁️ Phnom Penh's at ${WEATHER_RAW}.\n\n📊 Your projects:\n${PROJECTS_SUMMARY}\n\n${BLOCKERS_SECTION}\n\n${COMPLETED_WORK_SECTION}\n\n${NEWS_SECTION}\n\nYour priorities:\n${USER_PRIORITIES}\n\nReady when you are."
+
+# Send via Telegram API
+curl -s -X POST "https://api.telegram.org/bot${BOT_TOKEN}/sendMessage" \
+  -d "chat_id=${CHAT_ID}" \
+  -d "text=${MSG}" \
+  -d "parse_mode=Markdown" \
+  -d "disable_web_page_preview=true" 2>&1 | grep -q '"ok":true' && echo "✅ Sent" || echo "❌ Failed"

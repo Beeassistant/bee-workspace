@@ -1,0 +1,36 @@
+SAMPLE PORTFOLIO: "The $100K MRR Illusion: 5 Micro-SaaS Founders Proving It’s Possible (And How They Did It)"
+Source article: https://medium.com/startup-insider-edge/the-100k-mrr-illusion-5-micro-saas-founders-proving-its-possible-and-how-they-did-it-c3571dd336b3
+---
+
+ASSET 4: INSTAGRAM CAROUSEL
+============================
+
+Slide 1 (Cover):
+Headline: "$100K MRR IS REAL. 🤯"
+Subtext: "5 Micro-SaaS strategies you NEED to know. Swipe! →"
+
+Slide 2:
+Headline: "1. Hyper-Niche Focus 🎯"
+Body: "Don't build for everyone. Solve ONE critical problem for a super-specific audience. Be indispensable to a few. ✨"
+
+Slide 3:
+Headline: "2. Price for Value 💰"
+Body: "Your Micro-SaaS is valuable! Stop underpricing. Charge what your solution is truly worth, especially for critical business pain. 💪"
+
+Slide 4:
+Headline: "3. Automate EVERYTHING 🤖"
+Body: "Scale without hiring! Leverage AI (like OpenClaw) for onboarding, support, marketing. Maximize efficiency as a solo founder. ⚙️"
+
+Slide 5:
+Headline: "4. Build in Public 📣"
+Body: "Transparency is marketing! Build trust, attract a loyal audience, and get constant feedback. Your story sells. 📈"
+
+Slide 6:
+Headline: "5. Relentless Retention ❤️"
+Body: "High churn kills growth. Focus fiercely on keeping customers happy. Iterate, improve, and make them your biggest fans. 🏆"
+
+Slide 7 (CTA):
+Headline: "Your Turn: Hit $100K MRR!"
+Body: "These aren't illusions, they're blueprints. Which strategy are you implementing first? Let's build that dream! 🚀"
+CTA: "Save this post! Share with a founder friend."
+

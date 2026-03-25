@@ -1,0 +1,188 @@
+SAMPLE PORTFOLIO: "I Built a $70k Micro-SaaS in 6 Days"
+Source article: https://medium.com/@futariboy/yes-i-built-a-70k-micro-saas-in-only-6-days-heres-how-8e448153fa13
+---
+
+ASSET 1: TWITTER/X THREAD
+==========================
+
+1/ I built a $70k micro-SaaS in just 6 days of actual work.
+
+No VC funding. No big team. Just one problem, solved fast.
+
+Here's the full playbook 🧵
+
+2/ The idea came from a friend who needed a simple JSON viewer for non-technical users.
+
+That's it. Not a platform. Not a suite of tools. One tiny problem that a specific audience would pay to solve.
+
+3/ I built the first version in 2 days (12 hours).
+
+Vue JS frontend. Stripe Checkout. Netlify hosting. Free.
+
+One-time payment of $5. Shipped. Done.
+
+4/ The "complex backend" instinct will kill your momentum.
+
+My users were non-technical — if they knew how to edit frontend code, they wouldn't need my app.
+
+Frontend-only was the right call. Know your audience.
+
+5/ Analytics weren't vanity metrics. They were survival tools.
+
+When sales dropped to zero, Google Analytics told me exactly why: the JSON structure had changed upstream.
+
+We lost 3 weeks. That hurt. Now I log everything.
+
+6/ Promotion was two things: Google Keyword Planner + a YouTube tutorial.
+
+Targeted the exact search terms our users were typing. Video took off. Killed the ad spend entirely.
+
+7/ The 5-step micro-SaaS framework:
+
+→ Find ONE niche, ONE problem
+→ Validate in communities (Reddit, Discord, Twitter)
+→ Confirm someone's already searching for it
+→ Ship fast, iterate on the 20% that drives 80% of value
+→ Use the simplest stack that serves your audience
+
+8/ $70k. 14 months on autopilot. 6 days of work.
+
+The question isn't "is it possible?"
+
+It's: are people ready to pay for the problem you solve?
+
+Start there. Build second.
+
+
+---
+
+ASSET 2: LINKEDIN POST
+=======================
+
+$70k from 6 days of work. Here's what most founders miss about this story.
+
+An indie hacker built a micro-SaaS in 2019 — a simple JSON data viewer. Non-technical users needed to read exported app data; he gave them a clean UI for $5 a pop. 6,000+ sales. 14 months of autopilot revenue.
+
+What's worth stealing from this:
+
+1. The problem was laughably small. That was the point. One specific pain point, one specific audience. Not a platform — a tool.
+
+2. He matched the tech to the user. His customers weren't developers, so a complex backend would've been overkill and slower to build. Frontend-only was the right answer.
+
+3. Analytics weren't a dashboard — they were an early warning system. When the source app changed its JSON structure, sales flatlined. He only caught it because he was logging everything.
+
+4. The YouTube video beat paid ads. Two tutorials (English + French) targeting exact user search terms eventually made Google Ads unnecessary.
+
+The real lesson: speed of execution matters less than clarity of problem. He shipped fast because he knew *exactly* what he was building and *exactly* who it was for.
+
+What's the one problem your users have that you keep deprioritising because it feels too small?
+
+#MicroSaaS #IndieHacking #B2BSaaS #BuildInPublic #Founder
+
+
+---
+
+ASSET 3: TIKTOK SCRIPT
+=======================
+
+[HOOK — first 2 seconds, text on screen]
+"$70,000. 6 days of work. Here's how."
+
+[BEAT 1 — 0:03–0:10]
+Voiceover: "In 2019, a developer built a micro-SaaS that made $70k on autopilot for 14 months. The whole thing? A simple JSON viewer. That's it."
+
+[BEAT 2 — 0:10–0:20]
+Voiceover: "His friend found an app where users could export their data — but it came out as unreadable JSON code. Non-tech users had no idea what to do with it."
+Visual cue: show messy JSON code → then clean, readable table
+
+[BEAT 3 — 0:20–0:30]
+Voiceover: "So he built a viewer. Two days. Vue JS, Stripe, Netlify — all free to start. One-time payment: five bucks."
+Visual cue: countdown timer animation, dollar sign
+
+[BEAT 4 — 0:30–0:40]
+Voiceover: "6,000 sales. $30k. And he'd only worked 24 hours total by that point."
+Visual cue: rising revenue graph
+
+[BEAT 5 — 0:40–0:50]
+Voiceover: "The lesson? Don't build a platform. Solve ONE problem for ONE audience. Ship it in days, not months. Then let it run."
+
+[CTA — 0:50–0:60]
+Voiceover: "What's the tiny problem you've been ignoring? That might be your $70k idea."
+Text on screen: "Follow for more indie hacker breakdowns 🐝"
+
+
+---
+
+ASSET 4: INSTAGRAM CAROUSEL
+============================
+
+Slide 1 (Cover):
+Headline: "$70k. 6 days of work. One tiny problem."
+Subtext: "The micro-SaaS playbook nobody talks about →"
+
+Slide 2:
+Headline: "The idea was embarrassingly simple"
+Body: "A JSON data viewer. Non-technical users couldn't read their own exported app data. He made it readable. $5 per view."
+
+Slide 3:
+Headline: "Built in 2 days. Shipped immediately."
+Body: "Vue JS. Stripe. Netlify. No backend. No overengineering. He matched the tech to the audience — and his audience wasn't developers."
+
+Slide 4:
+Headline: "6,000+ sales. $30k+. 24 hours of work."
+Body: "While it ran on autopilot, he only needed to touch it when the source data structure changed. Then he fixed it and left it again."
+
+Slide 5:
+Headline: "His biggest mistake?"
+Body: "Not noticing when upstream changes killed sales. He lost 3 weeks of revenue. Log everything. Watch your data like it pays your rent — because it does."
+
+Slide 6:
+Headline: "How he got customers (no ad budget)"
+Body: "Google Keyword Planner → found exact search terms → made two YouTube tutorials → organic traffic crushed paid ads."
+
+Slide 7:
+Headline: "The 5-step framework"
+Body:
+→ One niche. One problem.
+→ Validate in communities
+→ Confirm people search for it
+→ Ship fast. Iterate on what matters.
+→ Use the simplest stack that works
+
+Slide 8 (CTA):
+Headline: "What's your one problem?"
+Body: "The best micro-SaaS ideas feel too small. That's usually the sign you're onto something. 🐝"
+CTA: "Save this. Share it with a founder friend."
+
+
+---
+
+ASSET 5: EMAIL SNIPPET
+=======================
+
+Subject: The $70k micro-SaaS built in 6 days (and what you can steal from it)
+
+---
+
+Quick one today.
+
+An indie hacker built a micro-SaaS in 2019. Nothing fancy — a JSON data viewer for non-technical users who couldn't read their own exported app data.
+
+First version: 2 days. $5 one-time payment. Frontend only.
+
+14 months later: $70k. 6 total days of work.
+
+Three things worth stealing:
+
+1. The problem was small by design. One specific pain point, one specific audience. Not a platform. A tool.
+
+2. He logged everything from day one. When sales dropped to zero overnight, the analytics told him exactly why: the upstream app had changed its data format. Without logs, he'd have had no idea.
+
+3. YouTube beat paid ads. Two tutorials targeting exact user search terms. Organic took over within months.
+
+The question this founder kept coming back to: "Are people already searching for a solution to this problem?"
+
+If yes — build it fast and get out of your own way.
+
+---
+
