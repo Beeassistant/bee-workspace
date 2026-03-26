@@ -19,6 +19,10 @@ Run this checklist on every heartbeat. Adapt the specific checks to your busines
 
 **This is non-negotiable.** A progress report that ignores active threads is incomplete and unacceptable.
 
+## Morning Brief (run at start of day — 9:15am "Daily Revenue Sprint" cron)
+**Read FIRST:** `~/clawd/tmp/clawmart-morning-sales.txt` — this is the ClawMart totalSales checked at 7am by the `clawmart-sales-morning-check` cron. Include this number in the brief.
+Then proceed with the full heartbeat checklist above.
+
 ## Execution Check (every heartbeat)
 1. Read today's plan from `memory/YYYY-MM-DD.md` under "## Today's Plan"
 2. Check progress against each planned item — what's done, what's blocked, what's next
@@ -36,7 +40,7 @@ Run this checklist on every heartbeat. Adapt the specific checks to your busines
 
 ### Sales Platforms
 - **Gumroad:** Check API for new sales since last check. Report: total sales count, revenue, any new orders.
-- **ClawMart:** Check email for new sales notifications. Report: total sales count, revenue, any new orders.
+- **ClawMart:** Run `/tmp/clawmart-sales-check.sh` to get `totalSales`. Report: total sales count, any new sales since last check. (API: `GET /me` → `totalSales`; API key from `~/.openclaw/workspace/.env.clawmart`)
 
 ### X/Twitter Activity (if @bee_h_q is active)
 - Report last 3 posts (time posted GMT+7, content summary)

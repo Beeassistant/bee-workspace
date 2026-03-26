@@ -22,7 +22,7 @@ I saw you struggling with OpenClaw setup in [thread/_post]. I run a Done-For-You
 
 Most people spend 3-6 hours trying to get it working. I can have you up and running in under an hour, fully configured with the skills you need.
 
-Pricing: $75 basic setup, $150 for full configuration with ongoing support.
+Pricing: $29 for full Done-For-You setup (limited time intro offer).
 
 Worth a conversation?
 
@@ -54,7 +54,7 @@ Hi,
 
 I help founders and indie hackers get OpenClaw running without the frustration. Most clients were where you are now — stuck on config, API keys, or tools not working.
 
-Done-for-you setup: $75-$150 depending on complexity.
+Done-for-you setup: $29 (intro offer).
 
 Worth a chat?
 

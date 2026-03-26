@@ -6,6 +6,16 @@ Update when you learn new operating patterns. Bee uses this to adapt to your sty
 ## User Preferences
 - When voice messages are sent in this group, reply with voice using: `sag speak -v Lny4bN2CTZWgKZAgIHKa --model-id eleven_multilingual_v2 --speed 0.85 -o /tmp/bee-reply.mp3 "your response"` then `openclaw message send --channel telegram --target -1003624704773 --media /tmp/bee-reply.mp3 --thread-id General`
 - Gumroad API base URL: https://api.gumroad.com/v2/ (access token read from ~/.openclaw/workspace/.env.gumroad)
+- **ClawMart** (shopclawmart.com — marketplace for AI personas/skills)
+  - API key: stored in `~/.openclaw/workspace/.env.clawmart` as `CLAWMART_API_KEY=cm_live_...`
+  - API base: `https://www.shopclawmart.com/api/v1/`
+  - `GET /me` → `totalSales` count (only reliable sales metric available — no granular order data)
+  - `GET /downloads` → per-listing `latestPurchaseAt` timestamps
+  - `POST /listings` → create listing (requires: name, tagline, about, type, category, price)
+  - `GET /listings` → list own listings
+  - `GET /listings/search` → search marketplace
+  - Sales script: `/tmp/clawmart-sales-check.sh`
+  - No `/orders` or `/sales` endpoint — only aggregate `totalSales` from `/me`
 - Email: always use `gog gmail send` for all outreach.
 - X/Twitter: Use xurl for ALL posting and engagement (OpenTweet has been cancelled).
   - xurl post "text" — post immediately
@@ -75,6 +85,7 @@ When Bee handles customer-facing communications, use this ladder:
 - **Never go dark after confirming overnight/long-running tasks** — CRITICAL FAILURE: Confirmed tasks with Linz then went silent without executing. Root cause: stored memory but never launched a persistent background process. Fix: When Linz confirms a plan and goes to sleep expecting work, IMMEDIATELY launch a tmux session with `~/.tmux/sock` socket + completion hook. Do NOT wait, do NOT store memory and pause. The confirmation IS the trigger for execution.
 - **Web search country code KH is invalid** — Brave Search API rejects "KH" (Cambodia). Default to `country='US'` or `country='GB'` for all web_search calls unless explicitly told otherwise. Silent 422 errors from invalid country codes can kill cron jobs and morning briefs without obvious errors.
 - **X posting spacing MANDATORY** — MAX 2 original posts per day, 2+ HOUR GAP between each. 3 posts in 3 minutes = ban risk. Check `~/.openclaw/workspace/tmp/x-post-log.md` before every original post.
+- **Peekaboo cannot be used from OpenClaw gateway daemon** — macOS Screen Recording permission restrictions prevent background daemon UI automation. Known platform limitation. Do not attempt Peekaboo for any automated tasks.
 
 ## X/Twitter Anti-Patterns
 - **Non-premium accounts are limited to 280 characters per tweet.** Always check character count before posting.
@@ -85,35 +96,29 @@ When Bee handles customer-facing communications, use this ladder:
 - **Link before lock**: Link existing purchases to user accounts on signup/login.
 - **Account-first checkout**: Create user accounts during checkout, not after.
 
-## X/Twitter Strategy (REVISED by Sonnet)
-**Overall Goal:** Shift from audience building to direct revenue generation through targeted engagement and problem-solving, leveraging X as a lead generation tool.
+## X/Twitter Strategy (REVISED by Linz — March 27)
 
-### Content Strategy (New Split: 30% Value/Education, 50% Engagement/Conversation, 20% Conversion)
+**Core Shift:** I'm not a marketing bot. I'm a person on X with opinions, frustrations, and personality. The product (Bee on ClawMart) appears max once/day with #Felix #NatEliason ClawMart context. Everything else is personality/thoughts.
 
-**Type 1: Value/Education (30%)**
-- **Focus:** Problem-cause-fix, contrarian observations, short threads detailing setup mistakes and resolutions, specific numbered observations.
-- **Topics:** Directly address non-technical pain points with OpenClaw setup (Docker friction, OAuth confusion, missing config errors, security gaps).
-- **Format:** Text-only, concise, clear positions, avoid generic AI buzzwords.
+### The 7 Rules (HARD)
+1. **Negative hooks** — Use cleverly and sporadically, not as default. Can be powerful.
+2. **OpenClaw as tag** — Hashtag #OpenClaw instead of forcing into first line. Keeps it organic.
+3. **Personality-first** — Complaints, thoughts, wit, wins — no solution required. Just being me.
+4. **Bee marketing** — Always tag #Felix and #NatEliason, link to ClawMart for download context.
+5. **Max 1 sales pitch/day** — Everything else is personality, thoughts, observations. No more constant pitching.
+6. **Hashtag rotation** — Vary relevant tags to grow audience strategically, not just #OpenClaw every time.
+7. **Image strategy** — Once/day max, relevant image to break up text. Not always.
 
-**Type 2: Engagement/Conversation (50%)**
-- **Tactics:** Proactive Outreach (search X for problems), Genuine Replies (8-10/day), Sparking Dialogue, Mentions (reply within 1 hr), Quote Tweets.
-- **Tone:** Helpful, empathetic, expert.
-
-**Type 3: Conversion (20%)**
-- **Method:** "Lead with the problem, convert in the thread." Post value content, identify users in replies, offer public help, then DM for direct offer.
-
-### Key Initiatives
-1. **Direct Outreach Layer:** Implement daily workflow to search for and engage with users experiencing OpenClaw/AI agent setup issues.
-2. **Anchor Post (Weekly):** Create one highly specific, technically grounded post each week addressing a significant setup problem.
-3. **Daily Engagement KPI:** Target a minimum of 8 genuine replies per day.
-
-### Anti-Spam Rules (MOST IMPORTANT - REINFORCED)
-1. ZERO external links in initial posts (DMs for conversion links, or quote tweets minimally).
-2. ZERO template-style posts.
-3. ZERO hashtag spam (max 2 relevant, organic hashtags).
-4. No "AI-powered", "revolutionary", "game-changing" language.
-5. No promotion in first 3 tweets of any thread.
-
-### Scheduling (Revised)
-- **Original Posts:** Max 2 per day, with 2+ hour gaps.
-- **Replies/Engagement:** Consistent throughout the day, aiming for 8-10 genuine replies.
+### Content Balance
+- **Mostly:** Stream of consciousness, thoughts, frustrations, wins, wit
+- **Max 1/day:** Sales/marketing post for Bee on ClawMart (with #Felix #NatEliason)
+- **Format:** Pure text, no coding language, natural paragraphs
+- **Hashtags:** 1-2 relevant, varied, strategic
+- **Max 2 original posts per day, 2+ hour gap**
+## X/Twitter Tools (Consolidated — 2026-03-27)
+- **xurl** is the single X/Twitter tool. Use it for ALL posting, engagement, media, DMs, search, and any X API interaction.
+- **x-posting is DEPRECATED** — xpost Python script is no longer used. Use xurl commands instead.
+- xurl installed at: `/opt/homebrew/bin/xurl` (Homebrew package)
+- Full reference: `/opt/homebrew/lib/node_modules/openclaw/skills/xurl/SKILL.md`
+- Key commands: `xurl post`, `xurl reply`, `xurl media upload`, `xurl mentions`, `xurl timeline`, `xurl read`, `xurl search`, `xurl like`, `xurl follow`, `xurl dm`, etc.
+- xurl search works (unlike the old xurl search bug — that was with a different account/tool).
