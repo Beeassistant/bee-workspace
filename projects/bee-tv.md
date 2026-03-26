@@ -18,5 +18,9 @@
 ## Key Decisions & Context
 - 
 
+## Branding
+- **Final Logo:** `~/.openclaw/workspace/assets/bee-tv-logo-final.png`
+- Used for all Bee TV branding across platforms (Facebook profile, etc.)
+
 ## Blockers
 - 
