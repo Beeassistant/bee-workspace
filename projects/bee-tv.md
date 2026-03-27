@@ -21,6 +21,25 @@
 ## Branding
 - **Final Logo:** `~/.openclaw/workspace/assets/bee-tv-logo-final.png`
 - Used for all Bee TV branding across platforms (Facebook profile, etc.)
+- **Colors:** Bee Gold `#E8A232` · Digital Blue `#276AB2` · Black `#000000/#313131` · Hive White `#FFFFFF` · Khmer Red `#CC0000`
+- **Typography:** Inter or Montserrat Bold (headings), Inter or Open Sans (body)
+- **Style:** Clean modern, geometric hexagonal patterns, lifestyle photography, expat representation
+- **Voice:** Professional, witty, curator authority. NOT gimmicky bee puns.
+- **Tagline:** "The Bee-All and End-All of streaming"
+- **Local content:** Asian language content (Chinese, Korean, Cambodian) or Khmer references — use Khmer Red `#CC0000`
+
+## Pricing
+- **$95/year** — annual pass (includes 7-day free trial)
+- **$11/month** — standard monthly plan
+- ~~$55/6 months~~ — NO LONGER OFFERED
+
+## Brand Pillars
+1. Reliable — 99.5% uptime (not tested but "pretty accurate"), 30-day refund guarantee
+2. Affordable — always competitive pricing
+3. Connected — one curated library of movies, series, documentaries
+
+## Target Audiences
+Retirees · Nomads · Families · Workers
 
 ## Blockers
-- 
+- Facebook posts: Post 2 closest to branding but logo placement needs refinement (awaiting Linz feedback)
