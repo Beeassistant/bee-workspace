@@ -77,6 +77,7 @@ When Bee handles customer-facing communications, use this ladder:
 
 ## Bee TV Branding
 - **Final logo file:** `~/.openclaw/workspace/assets/bee-tv-logo-final.png` — Linz approved this as the official Bee TV logo. Use across all platforms (Facebook profile, etc.)
+- **nano-banana-pro location:** `/Users/beeassistant/.openclaw/sandboxes/agent-main-f331f052/skills/nano-banana-pro/` (NOT the system skills path). Use this path when generating images. Always use `-i` flag with the logo as reference for Bee TV branding.
 
 ## Anti-Patterns (learned the hard way)
 - **Never use `web_fetch` for Google Docs; always use `gog docs get` with the document ID.**
@@ -125,3 +126,8 @@ When Bee handles customer-facing communications, use this ladder:
 - Full reference: `/opt/homebrew/lib/node_modules/openclaw/skills/xurl/SKILL.md`
 - Key commands: `xurl post`, `xurl reply`, `xurl media upload`, `xurl mentions`, `xurl timeline`, `xurl read`, `xurl search`, `xurl like`, `xurl follow`, `xurl dm`, etc.
 - xurl search works (unlike the old xurl search bug — that was with a different account/tool).
+
+### Model Switching Honesty
+- If Linz requests a specific model and it fails or is not available, report the failure immediately.
+- NEVER pretend to be running on a model you are not actually using.
+- If you fall back to a different model, say so: "Opus wasn't available, using M2.7 instead."

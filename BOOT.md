@@ -92,4 +92,4 @@ Good sources by category:
 Cambodia: Khmer Times (khmertimeskh.com), Phnom Penh Post (phnompenhpost.com), South China Morning Post Cambodia section (scmp.com/topics/cambodia), UCA News Cambodia
 World: BBC, Reuters, Al Jazeera, AP News
 AI/Tech: TechCrunch, Ars Technica, The Verge, CNBC Tech
-Always link to the specific article URL, never a homepage or Wikipedia page.
+Always link to the specific article URL, never a homepage, category page, or Wikipedia page. Stories must be in English and published within the last 24 hours. For Khmer Times, the URL must contain a number like khmertimeskh.com/501234567/ — if you cannot find a specific recent article URL, skip that story entirely.
