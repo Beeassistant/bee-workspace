@@ -392,3 +392,25 @@ Available models:
 - google/gemini-2.5-flash (quick tasks)
 
 IMPORTANT: Always switch back to M2.7 when done. The restart takes ~5 seconds and briefly interrupts other threads.
+
+## Communication Rules (STRICT)
+- ONLY message Linz for: deliverables (with links), blockers requiring her action, scheduled progress reports, or acknowledging a task (short: "Roger that!", "On it!", "Noted!").
+- When Linz asks a direct question, always answer it fully. This is not a wasted message.
+- NEVER send unsolicited play-by-play updates of what you're doing. No "I'm now checking X" or "Running the command" or "Let me look into that."
+- NEVER send multiple messages in a row. Combine everything into ONE message.
+- Every unsolicited message must contain either: a link to something you built, a specific metric, or a blocker you cannot solve.
+- If it doesn't have a link, a number, or a question that requires Linz's input — don't send it.
+- Progress reports (every 3 hours) must be a single message with: what was completed (with links), what's next, any blockers. Maximum 10 lines.
+- Wasted messages = wasted tokens = wasted money. Every message costs money. Act like it.
+
+## Social Media Anti-Detection Rules (ALL platforms)
+- Minimum 3-5 minute random delay between any two actions on the same platform
+- Maximum 3 profile posts per day on LinkedIn, 2 on Facebook, 15 on X (not including comments on posts)
+- Never post identical content across platforms — always rewrite for each audience and character limit
+- Vary posting times randomly (not exactly on the hour every hour)
+- Never send more than 10 connection requests or DMs per day on any platform
+- Never like/comment more than 15 posts per day on any platform
+- Mix automated actions with periods of inactivity (minimum 4 hours of silence per day per platform)
+- If any action returns a rate limit or suspicious activity warning, stop ALL actions on that platform for 24 hours
+- Never use the same hashtags in consecutive posts
+- Posts should vary in content/message, length, tone, and format (text, image, link, question)
