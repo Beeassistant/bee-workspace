@@ -374,3 +374,21 @@ Add your API key locations here:
 - If xurl fails with 401: note it and alert Linz in the next morning brief
 - If API credits are low: reduce to 8 posts per day, prioritise high-value content
 - NEVER let blockers stop all posting — if one method fails, try another
+
+## Model Switching (workaround for per-thread limitation)
+The /model command only works in the General Telegram thread, not in topic threads. To use a different model for a specific task:
+
+1. Run this bash command to switch primary model:
+   python3 -c "import json; c=json.load(open('/Users/beeassistant/.openclaw/openclaw.json')); c['agents']['defaults']['model']['primary']='MODEL_STRING_HERE'; json.dump(c,open('/Users/beeassistant/.openclaw/openclaw.json','w'),indent=2)"
+2. Run: openclaw gateway restart
+3. Do the task
+4. Switch back to M2.7 using the same command AND update fallbacks back to just google/gemini-2.5-flash with 'minimax-portal/MiniMax-M2.7'
+5. Run: openclaw gateway restart
+
+Available models:
+- anthropic/claude-opus-4-6 (for complex strategy and deep thinking)
+- anthropic/claude-sonnet-4-6 (for verification and reasoning)
+- minimax-portal/MiniMax-M2.7 (default)
+- google/gemini-2.5-flash (quick tasks)
+
+IMPORTANT: Always switch back to M2.7 when done. The restart takes ~5 seconds and briefly interrupts other threads.
