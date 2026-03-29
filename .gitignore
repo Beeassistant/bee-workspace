@@ -1,0 +1,38 @@
+# .gitignore for Bee's workspace
+
+# Environment variables
+.env
+.env.clawmart
+.env.gumroad
+
+# Logs
+*.log
+log/
+
+# OS generated files
+.DS_Store
+.Trashes
+Thumbs.db
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Dependency directories
+node_modules/
+bower_components/
+jspm_packages/
+
+# Build artifacts
+build/
+dist/
+
+# Temporary files
+*.tmp
+*.bak
+*~
+~*
+# OpenClaw specific
+tmp/
