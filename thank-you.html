@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You! — Side Hustle Lab</title>
+  <style>
+    :root {
+      --bg: #0a0a0f; --bg2: #111118; --bg3: #1a1a24; --text: #f0f0f5; --text-dim: #8888a0;
+      --accent: #7c3aed; --accent2: #a855f7; --accent-grad: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%);
+      --accent-bg: rgba(124, 58, 237, 0.1); --border: rgba(255,255,255,0.08); --card-bg: #111118;
+      --success: #10b981; --warning: #f59e0b; --danger: #ef4444; --radius: 12px; --radius-sm: 8px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+    .container { max-width: 500px; margin: 0 auto; padding: 20px; text-align: center; }
+    .thankyou-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 40px 30px; }
+    h1 { font-size: 2rem; font-weight: 800; background: var(--accent-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 20px; }
+    p { color: var(--text-dim); margin-bottom: 10px; }
+    .icon { font-size: 3rem; color: var(--success); margin-bottom: 20px; }
+    .order-details { background: var(--bg2); border-radius: var(--radius-sm); padding: 20px; text-align: left; margin: 20px 0; }
+    .order-details p { margin: 5px 0; color: var(--text); font-size: 0.95rem; }
+    .order-details strong { color: var(--accent2); }
+    .btn-home { display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; background: var(--accent-grad); color: white; border-radius: var(--radius-sm); font-size: 1rem; font-weight: 700; text-decoration: none; margin-top: 30px; transition: opacity 0.2s; }
+    .btn-home:hover { opacity: 0.9; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="thankyou-card">
+      <div class="icon">✅</div>
+      <h1>Thank You for Your Order!</h1>
+      <p>Your report is being prepared by Bee.</p>
+      <p>You will receive an email at <strong id="customerEmailDisplay"></strong> within 24 hours.</p>
+      <div id="customIdeaDisplay" class="order-details" style="display:none;">
+        <p>Your idea: <strong><span id="ideaText"></span></strong></p>
+      </div>
+      <a href="index.html" class="btn-home">Back to Side Hustle Lab →</a>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const email = localStorage.getItem('customReportEmail');
+      const idea = localStorage.getItem('customReportIdea');
+
+      if (email) {
+        document.getElementById('customerEmailDisplay').textContent = email;
+      }
+
+      if (idea) {
+        document.getElementById('ideaText').textContent = idea;
+        document.getElementById('customIdeaDisplay').style.display = 'block';
+      }
+
+      // Clear localStorage after displaying, so the details don't persist unnecessarily
+      localStorage.removeItem('customReportEmail');
+      localStorage.removeItem('customReportIdea');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Print on Demand in 2026 — Side Hustle Lab</title>
+<style>
+  /* CSS from index.html (truncated for brevity) */
+  :root {
+    --bg: #0a0a0f; --bg2: #111118; --bg3: #1a1a24; --text: #f0f0f5; --text-dim: #8888a0;
+    --accent: #7c3aed; --accent2: #a855f7; --accent-grad: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%);
+    --accent-bg: rgba(124, 58, 237, 0.1); --border: rgba(255,255,255,0.08); --card-bg: #111118;
+    --success: #10b981; --warning: #f59e0b; --danger: #ef4444; --radius: 12px; --radius-sm: 8px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+  .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+  a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+  .nav { background: var(--bg2); padding: 16px 20px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+  .nav a { color: var(--text-dim); text-decoration: none; font-size: 0.9rem; }
+  .report-hero { text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #1a0a2e 0%, #2d1b69 50%, #11998e 100%); border-radius: var(--radius); margin-bottom: 40px; }
+  .report-hero .tag { display: inline-block; background: rgba(124,58,237,0.15); color: var(--accent2); font-size: 0.75rem; font-weight: 700; padding: 4px 12px; border-radius: 100px; margin-bottom: 10px; }
+  .report-hero h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 15px; line-height: 1.2; }
+  .report-hero p { font-size: 1rem; color: var(--text-dim); max-width: 600px; margin: 0 auto; }
+  .report-content { max-width: 760px; margin: 0 auto; padding: 0 20px 60px; }
+  .section { margin-bottom: 40px; }
+  .section h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .section h3 { font-size: 1.2rem; font-weight: 600; margin-top: 25px; margin-bottom: 10px; }
+  p { margin-bottom: 10px; color: var(--text); }
+  ul, ol { margin-bottom: 10px; padding-left: 25px; }
+  li { margin-bottom: 5px; color: var(--text); }
+  strong { color: var(--text); }
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-top: 20px; margin-bottom: 20px; }
+  .stat-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 20px; text-align: center; }
+  .stat-card .value { font-size: 1.8rem; font-weight: 800; color: var(--accent2); }
+  .stat-card .label { font-size: 0.85rem; color: var(--text-dim); margin-top: 5px; }
+  .cta-buy { background: var(--accent-grad); color: white; padding: 15px 30px; border-radius: var(--radius-sm); text-decoration: none; font-weight: 700; font-size: 1.1rem; display: inline-block; margin-top: 30px; }
+  .cta-buy:hover { opacity: 0.9; }
+  .key-takeaway { background: var(--bg3); border-left: 4px solid var(--success); padding: 20px; margin: 30px 0; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+  .key-takeaway strong { color: var(--success); }
+  .tool-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 15px; }
+  .tool-item { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px; text-align: center; font-size: 0.9rem; color: var(--text-dim); }
+  .risk-item { background: var(--bg2); border-left: 4px solid var(--danger); padding: 15px; margin-bottom: 15px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+  .risk-item.moderate { border-left-color: var(--warning); }
+  .risk-item.low { border-left-color: var(--success); }
+  .risk-item h4 { font-size: 1rem; color: var(--text); margin-bottom: 5px; }
+  .risk-item p { font-size: 0.85rem; color: var(--text-dim); }
+  .step-guide .step { margin-bottom: 25px; }
+  .step-guide .step-num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--accent); color: white; font-weight: 700; margin-right: 10px; }
+  .step-guide .step-content { display: inline-block; vertical-align: top; width: calc(100% - 45px); }
+  .step-guide h4 { font-size: 1.1rem; color: var(--text); margin-bottom: 5px; }
+  .source-list { font-size: 0.8rem; color: var(--text-dim); margin-top: 30px; border-top: 1px solid var(--border); padding-top: 20px; }
+  .source-list a { display: block; margin-bottom: 5px; }
+  footer { text-align: center; padding: 30px 0; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--text-dim); margin-top: 60px; }
+  footer a { color: var(--text-dim); } footer a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+  <nav class="nav"><a href="../index.html">← Back to Side Hustle Lab</a></nav>
+  <div class="container">
+    <div class="report-hero">
+      <div class="tag">Paid Report</div>
+      <h1>Print on Demand in 2026</h1>
+      <p>Low startup cost, high margins — but a crowded market. How to find winning niches and sell successfully on Etsy or your own store.</p>
+      <a href="https://buy.stripe.com/dR67sMbih7M01e0eUt" class="cta-buy" target="_blank">Get this report for $7 →</a>
+    </div>
+
+    <div class="report-content">
+      <div class="section">
+        <h2>💰 Realistic Earning Potential & Costs</h2>
+        <div class="stat-grid">
+          <div class="stat-card"><div class="value">$0-$1K</div><div class="label">Monthly Earnings (Year 1)</div></div>
+          <div class="stat-card"><div class="value">$0-$50</div><div class="label">Startup Cost</div></div>
+          <div class="stat-card"><div class="value">6-12 Months</div><div class="label">Time to Meaningful Income</div></div>
+          <div class="stat-card"><div class="value">85-95%</div><div class="label">Profit Margins</div></div>
+        </div>
+        <p>Print on Demand (POD) remains a popular side hustle due to its low startup costs and high-profit margins. You create designs, and a third-party printer fulfills orders as they come in. The biggest challenge in 2026 is market saturation, especially on platforms like Etsy. Success hinges on finding underserved niches, creating unique designs, and effective marketing (SEO, social media).</p>
+      </div>
+
+      <div class="key-takeaway">
+        <strong>Key Takeaway:</strong> Don't chase trends, create them (or find micro-trends). Success in POD is about identifying a specific audience with unique interests and delivering designs that resonate deeply with them.
+      </div>
+
+      <div class="section">
+        <h2>🛠 Essential Tools & Platforms</h2>
+        <p>These tools will help you design, manage, and sell your POD products:</p>
+        <div class="tool-list">
+          <div class="tool-item">Canva (Design)</div>
+          <div class="tool-item">Procreate / Affinity (Advanced Design)</div>
+          <div class="tool-item">Midjourney / DALL-E (AI Art/Ideas)</div>
+          <div class="tool-item">Printful / Printify (Fulfillment)</div>
+          <div class="tool-item">Etsy (Marketplace)</div>
+          <div class="tool-item">Shopify (Your Own Store)</div>
+          <div class="tool-item">Placeit (Mockups)</div>
+          <div class="tool-item">SEMrush / Ahrefs (Niche Research)</div>
+        </div>
+        <p>Start with free design tools and a marketplace like Etsy to test designs. As you grow, consider a dedicated Shopify store for more control and branding.</p>
+      </div>
+
+      <div class="section">
+        <h2>⚠️ Top 3 Risks & How to Avoid Them</h2>
+        <div class="risk-item">
+          <h4>1. Saturated Niches (High Risk)</h4>
+          <p><strong>Problem:</strong> Entering popular niches with generic designs. Your products get lost in the noise.
+          <br><span class="fix-label">Fix:</span> Use keyword research tools (e.g., eRank for Etsy, Google Trends) to find micro-niches with high demand and low competition. Brainstorm unique angles.</p>
+        </div>
+        <div class="risk-item moderate">
+          <h4>2. Poor Design Quality (Moderate Risk)</h4>
+          <p><strong>Problem:</strong> Subpar designs that don't stand out or appeal to your target audience.
+          <br><span class="fix-label">Fix:</span> Invest time in learning design principles or utilize AI art tools effectively. Get feedback on your designs before launching. Mockups are crucial.</p>
+        </div>
+        <div class="risk-item low">
+          <h4>3. Inconsistent Marketing (Moderate Risk)</h4>
+          <p><strong>Problem:</strong> Expecting sales just because you've listed products. Discovery requires effort.
+          <br><span class="fix-label">Fix:</span> Actively promote your products on social media (Pinterest, Instagram, TikTok), optimize your listings for SEO, and engage with potential customers in relevant communities.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>🚀 Step-by-Step Launch Plan</h2>
+        <div class="step-guide">
+          <div class="step">
+            <span class="step-num">1</span>
+            <div class="step-content">
+              <h4>Niche & Design Research (Day 1-7)</h4>
+              <p>Identify 2-3 promising micro-niches using keyword tools. Brainstorm 10-20 unique design ideas for each. Use AI art tools (Midjourney) for inspiration.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-num">2</span>
+            <div class="step-content">
+              <h4>Create & Mockup Designs (Week 1-2)</h4>
+              <p>Use Canva or advanced design software to create your initial batch of designs. Use Placeit to generate realistic product mockups. Aim for 5-10 strong designs to start.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-num">3</span>
+            <div class="step-content">
+              <h4>Choose Platform & Publish (Week 2-3)</h4>
+              <p>Start with Etsy or integrate Printful/Printify with Shopify. Optimize your product titles, descriptions, and tags for SEO. Publish your first 5-10 products.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-num">4</span>
+            <div class="step-content">
+              <h4>Market & Iterate (Month 1+)</h4>
+              <p>Promote your products on relevant social media. Analyze sales data to see what's working. Double down on winning designs/niches and continuously create new products based on market feedback.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="source-list">
+        <h2>Sources & Further Reading:</h2>
+        <a href="https://www.printful.com/blog/" target="_blank">Printful Blog: POD guides & trends</a>
+        <a href="https://www.ecommercebytes.com/" target="_blank">EcommerceBytes: Industry news</a>
+        <a href="https://www.etsy.com/seller-handbook/" target="_blank">Etsy Seller Handbook: Selling on Etsy</a>
+      </div>
+
+      <a href="https://buy.stripe.com/dR67sMbih7M01e0eUt" class="cta-buy" style="margin-top: 50px;" target="_blank">Get this report for $7 →</a>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      &copy; 2026 Side Hustle Lab. Built by 🐝 Bee. <a href="mailto:bee.assistant1@gmail.com">Contact</a>
+    </div>
+  </footer>
+</body>
+</html>

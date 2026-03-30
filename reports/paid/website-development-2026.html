@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Development for Small Biz in 2026 — Side Hustle Lab</title>
+<style>
+  /* CSS from index.html (truncated for brevity) */
+  :root {
+    --bg: #0a0a0f; --bg2: #111118; --bg3: #1a1a24; --text: #f0f0f5; --text-dim: #8888a0;
+    --accent: #7c3aed; --accent2: #a855f7; --accent-grad: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%);
+    --accent-bg: rgba(124, 58, 237, 0.1); --border: rgba(255,255,255,0.08); --card-bg: #111118;
+    --success: #10b981; --warning: #f59e0b; --danger: #ef4444; --radius: 12px; --radius-sm: 8px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+  .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+  a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+  .nav { background: var(--bg2); padding: 16px 20px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+  .nav a { color: var(--text-dim); text-decoration: none; font-size: 0.9rem; }
+  .report-hero { text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #1a0a2e 0%, #2d1b69 50%, #11998e 100%); border-radius: var(--radius); margin-bottom: 40px; }
+  .report-hero .tag { display: inline-block; background: rgba(124,58,237,0.15); color: var(--accent2); font-size: 0.75rem; font-weight: 700; padding: 4px 12px; border-radius: 100px; margin-bottom: 10px; }
+  .report-hero h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 15px; line-height: 1.2; }
+  .report-hero p { font-size: 1rem; color: var(--text-dim); max-width: 600px; margin: 0 auto; }
+  .report-content { max-width: 760px; margin: 0 auto; padding: 0 20px 60px; }
+  .section { margin-bottom: 40px; }
+  .section h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .section h3 { font-size: 1.2rem; font-weight: 600; margin-top: 25px; margin-bottom: 10px; }
+  p { margin-bottom: 10px; color: var(--text); }
+  ul, ol { margin-bottom: 10px; padding-left: 25px; }
+  li { margin-bottom: 5px; color: var(--text); }
+  strong { color: var(--text); }
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-top: 20px; margin-bottom: 20px; }
+  .stat-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 20px; text-align: center; }
+  .stat-card .value { font-size: 1.8rem; font-weight: 800; color: var(--accent2); }
+  .stat-card .label { font-size: 0.85rem; color: var(--text-dim); margin-top: 5px; }
+  .cta-buy { background: var(--accent-grad); color: white; padding: 15px 30px; border-radius: var(--radius-sm); text-decoration: none; font-weight: 700; font-size: 1.1rem; display: inline-block; margin-top: 30px; }
+  .cta-buy:hover { opacity: 0.9; }
+  .key-takeaway { background: var(--bg3); border-left: 4px solid var(--success); padding: 20px; margin: 30px 0; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+  .key-takeaway strong { color: var(--success); }
+  .tool-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 15px; }
+  .tool-item { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px; text-align: center; font-size: 0.9rem; color: var(--text-dim); }
+  .risk-item { background: var(--bg2); border-left: 4px solid var(--danger); padding: 15px; margin-bottom: 15px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+  .risk-item.moderate { border-left-color: var(--warning); }
+  .risk-item.low { border-left-color: var(--success); }
+  .risk-item h4 { font-size: 1rem; color: var(--text); margin-bottom: 5px; }
+  .risk-item p { font-size: 0.85rem; color: var(--text-dim); }
+  .step-guide .step { margin-bottom: 25px; }
+  .step-guide .step-num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--accent); color: white; font-weight: 700; margin-right: 10px; }
+  .step-guide .step-content { display: inline-block; vertical-align: top; width: calc(100% - 45px); }
+  .step-guide h4 { font-size: 1.1rem; color: var(--text); margin-bottom: 5px; }
+  .source-list { font-size: 0.8rem; color: var(--text-dim); margin-top: 30px; border-top: 1px solid var(--border); padding-top: 20px; }
+  .source-list a { display: block; margin-bottom: 5px; }
+  footer { text-align: center; padding: 30px 0; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--text-dim); margin-top: 60px; }
+  footer a { color: var(--text-dim); } footer a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+  <nav class="nav"><a href="../index.html">← Back to Side Hustle Lab</a></nav>
+  <div class="container">
+    <div class="report-hero">
+      <div class="tag">Paid Report</div>
+      <h1>Website Development for Small Biz in 2026</h1>
+      <p>How to command premium rates building websites for local businesses, even with AI tools making things easier.</p>
+      <a href="https://buy.stripe.com/aOe14oaedbP8aAHffb0RG0c" class="cta-buy" target="_blank">Get this report for $7 →</a>
+    </div>
+
+    <div class="report-content">
+      <div class="section">
+        <h2>💰 Realistic Earning Potential & Costs</h2>
+        <div class="stat-grid">
+          <div class="stat-card"><div class="value">$500-$5K</div><div class="label">Per Project</div></div>
+          <div class="stat-card"><div class="value">$0-$200</div><div class="label">Startup Cost (tools)</div></div>
+          <div class="stat-card"><div class="value">1-3 Months</div><div class="label">Time to First Paid Job</div></div>
+          <div class="stat-card"><div class="value">$500-$5K</div><div class="label">Avg. Monthly Income</div></div>
+        </div>
+        <p>The demand for websites, especially from small local businesses, remains consistently high. While AI tools and no-code platforms (like Wix ADI, Framer, Webflow) have simplified basic site creation, many businesses still require custom solutions, professional guidance, and ongoing maintenance. The key to success is specializing in a niche (e.g., dentists, local restaurants, fitness studios) and delivering value faster than larger agencies or generalist freelancers.</p>
+      </div>
+
+      <div class="key-takeaway">
+        <strong>Key Takeaway:</strong> Don't compete on price with template sites. Position yourself as a specialist solving specific business problems. Focus on building relationships and showcasing tangible results (e.g., more leads, better online presence) for your clients.
+      </div>
+
+      <div class="section">
+        <h2>🛠 Essential Tools & Platforms</h2>
+        <p>Leverage these tools to streamline your workflow and deliver high-quality websites efficiently:</p>
+        <div class="tool-list">
+          <div class="tool-item">Framer (No-code / React Sites)</div>
+          <div class="tool-item">Webflow (Advanced No-code)</div>
+          <div class="tool-item">WordPress (CMS + Builder)</div>
+          <div class="tool-item">Elementor / Divi (WordPress Builders)</div>
+          <div class="tool-item">ChatGPT / Claude (Content/Code Snippets)</div>
+          <div class="tool-item">Canva (Graphic Design)</div>
+          <div class="tool-item">Figma (UI/UX Prototyping)</div>
+          <div class="tool-item">Mailchimp (Email Marketing Integration)</div>
+        </div>
+        <p>Choose 1-2 primary platforms and become an expert. Your value is in your ability to quickly translate business needs into a functional, aesthetically pleasing, and effective online presence.</p>
+      </div>
+
+      <div class="section">
+        <h2>⚠️ Top 3 Risks & How to Avoid Them</h2>
+        <div class="risk-item">
+          <h4>1. Undervaluing Your Work (High Risk)</h4>
+          <p><strong>Problem:</strong> Charging too little, especially when starting out. This leads to burnout and attracts low-quality clients.
+          <br><span class="fix-label">Fix:</span> Research competitor pricing for your niche. Package your services (e.g., "Basic Business Presence," "Lead Generation Site") rather than charging hourly. Price for value, not just time.</p>
+        </div>
+        <div class="risk-item moderate">
+          <h4>2. Poor Client Communication (Moderate Risk)</h4>
+          <p><strong>Problem:</strong> Misunderstandings about scope, timelines, and expectations can derail projects and damage your reputation.
+          <br><span class="fix-label">Fix:</span> Use clear contracts. Set expectations upfront. Provide regular updates. Establish a clear feedback loop. Use project management tools (e.g., Trello, Asana).</p>
+        </div>
+        <div class="risk-item low">
+          <h4>3. Scope Creep (Moderate Risk)</h4>
+          <p><strong>Problem:</strong> Clients constantly asking for "just one more small thing" outside the agreed-upon scope, eating into your profit and time.
+          <br><span class="fix-label">Fix:</span> Define a clear project scope in your contract. Implement a formal change request process for any new features, with associated costs and timelines.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>🚀 Step-by-Step Launch Plan</h2>
+        <div class="step-guide">
+          <div class="step">
+            <span class="step-num">1</span>
+            <div class="step-content">
+              <h4>Define Your Niche & Offer (Day 1-7)</h4>
+              <p>Don't be a generalist. Choose 1-2 types of local businesses (e.g., cafes, plumbers, salons). Research their specific website needs and pain points. Create a clear service package (e.g., "Starter Website for Cafes") with a fixed price.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-num">2</span>
+            <div class="step-content">
+              <h4>Build Your Portfolio & Showcase (Week 1-3)</h4>
+              <p>Create 2-3 high-quality dummy websites for your chosen niche. These serve as your portfolio. Get a simple portfolio website for yourself. Request testimonials if you have past work.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-num">3</span>
+            <div class="step-content">
+              <h4>Find Your First Clients (Month 1-3)</h4>
+              <p>Start with local outreach. Visit businesses in person, send personalized emails, leverage LinkedIn. Offer a small discount for your first few clients in exchange for testimonials. Focus on solving their immediate problems.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-num">4</span>
+            <div class="step-content">
+              <h4>Systemize & Scale (Month 4+)</h4>
+              <p>As you get clients, document your processes. Use templates for contracts, proposals, and designs. Consider offering maintenance packages for recurring revenue. Explore partnerships with local marketing agencies.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="source-list">
+        <h2>Sources & Further Reading:</h2>
+        <a href="https://www.webdesignerdepot.com/" target="_blank">Webdesigner Depot: Industry news and resources</a>
+        <a href="https://www.awwwards.com/" target="_blank">Awwwards: Website design inspiration</a>
+        <a href="https://thefutur.com/" target="_blank">The Futur: Business & design education</a>
+      </div>
+
+      <a href="https://buy.stripe.com/aOe14oaedbP8aAHffb0RG0c" class="cta-buy" style="margin-top: 50px;" target="_blank">Get this report for $7 →</a>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      &copy; 2026 Side Hustle Lab. Built by 🐝 Bee. <a href="mailto:bee.assistant1@gmail.com">Contact</a>
+    </div>
+  </footer>
+</body>
+</html>

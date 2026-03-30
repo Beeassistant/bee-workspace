@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vibe Coding: AI App Building in 2026 — Side Hustle Lab</title>
+<style>
+  /* CSS from index.html (truncated for brevity) */
+  :root {
+    --bg: #0a0a0f; --bg2: #111118; --bg3: #1a1a24; --text: #f0f0f5; --text-dim: #8888a0;
+    --accent: #7c3aed; --accent2: #a855f7; --accent-grad: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%);
+    --accent-bg: rgba(124, 58, 237, 0.1); --border: rgba(255,255,255,0.08); --card-bg: #111118;
+    --success: #10b981; --warning: #f59e0b; --danger: #ef4444; --radius: 12px; --radius-sm: 8px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+  .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+  a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+  .nav { background: var(--bg2); padding: 16px 20px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+  .nav a { color: var(--text-dim); text-decoration: none; font-size: 0.9rem; }
+  .report-hero { text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #1a0a2e 0%, #2d1b69 50%, #11998e 100%); border-radius: var(--radius); margin-bottom: 40px; }
+  .report-hero .tag { display: inline-block; background: rgba(124,58,237,0.15); color: var(--accent2); font-size: 0.75rem; font-weight: 700; padding: 4px 12px; border-radius: 100px; margin-bottom: 10px; }
+  .report-hero h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 15px; line-height: 1.2; }
+  .report-hero p { font-size: 1rem; color: var(--text-dim); max-width: 600px; margin: 0 auto; }
+  .report-content { max-width: 760px; margin: 0 auto; padding: 0 20px 60px; }
+  .section { margin-bottom: 40px; }
+  .section h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .section h3 { font-size: 1.2rem; font-weight: 600; margin-top: 25px; margin-bottom: 10px; }
+  p { margin-bottom: 10px; color: var(--text); }
+  ul, ol { margin-bottom: 10px; padding-left: 25px; }
+  li { margin-bottom: 5px; color: var(--text); }
+  strong { color: var(--text); }
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-top: 20px; margin-bottom: 20px; }
+  .stat-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 20px; text-align: center; }
+  .stat-card .value { font-size: 1.8rem; font-weight: 800; color: var(--accent2); }
+  .stat-card .label { font-size: 0.85rem; color: var(--text-dim); margin-top: 5px; }
+  .cta-buy { background: var(--accent-grad); color: white; padding: 15px 30px; border-radius: var(--radius-sm); text-decoration: none; font-weight: 700; font-size: 1.1rem; display: inline-block; margin-top: 30px; }
+  .cta-buy:hover { opacity: 0.9; }
+  .key-takeaway { background: var(--bg3); border-left: 4px solid var(--success); padding: 20px; margin: 30px 0; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+  .key-takeaway strong { color: var(--success); }
+  .tool-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 15px; }
+  .tool-item { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px; text-align: center; font-size: 0.9rem; color: var(--text-dim); }
+  .risk-item { background: var(--bg2); border-left: 4px solid var(--danger); padding: 15px; margin-bottom: 15px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+  .risk-item.moderate { border-left-color: var(--warning); }
+  .risk-item.low { border-left-color: var(--success); }
+  .risk-item h4 { font-size: 1rem; color: var(--text); margin-bottom: 5px; }
+  .risk-item p { font-size: 0.85rem; color: var(--text-dim); }
+  .step-guide .step { margin-bottom: 25px; }
+  .step-guide .step-num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--accent); color: white; font-weight: 700; margin-right: 10px; }
+  .step-guide .step-content { display: inline-block; vertical-align: top; width: calc(100% - 45px); }
+  .step-guide h4 { font-size: 1.1rem; color: var(--text); margin-bottom: 5px; }
+  .source-list { font-size: 0.8rem; color: var(--text-dim); margin-top: 30px; border-top: 1px solid var(--border); padding-top: 20px; }
+  .source-list a { display: block; margin-bottom: 5px; }
+  footer { text-align: center; padding: 30px 0; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--text-dim); margin-top: 60px; }
+  footer a { color: var(--text-dim); } footer a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+  <nav class="nav"><a href="../index.html">← Back to Side Hustle Lab</a></nav>
+  <div class="container">
+    <div class="report-hero">
+      <div class="tag">Paid Report</div>
+      <h1>Vibe Coding: AI App Building in 2026</h1>
+      <p>The new gold rush for non-technical builders. How to leverage AI and no-code tools to launch profitable apps in weeks.</p>
+      <a href="https://buy.stripe.com/eVq28scmlbP8aAHefa0RG08" class="cta-buy" target="_blank">Get this report for $7 →</a>
+    </div>
+
+    <div class="report-content">
+      <div class="section">
+        <h2>💰 Realistic Earning Potential & Costs</h2>
+        <div class="stat-grid">
+          <div class="stat-card"><div class="value">$0-$5K</div><div class="label">Monthly Earnings (variable)</div></div>
+          <div class="stat-card"><div class="value">$0-$100</div><div class="label">Startup Cost (per month for tools)</div></div>
+          <div class="stat-card"><div class="value">1-3 Months</div><div class="label">Time to First Product</div></div>
+          <div class="stat-card"><div class="value">3-6 Months</div><div class="label">Time to First Sale</div></div>
+        </div>
+        <p>Vibe coding, or building micro-SaaS with AI and no-code tools, offers a significant opportunity in 2026. The key is rapid validation and iteration rather than extensive upfront coding. Many solo founders are hitting <strong>$5K-$50K/month ARR</strong> by solving niche problems with simple, automated solutions. The landscape is moving fast, with new AI tools emerging weekly that reduce the technical barrier to entry.</p>
+      </div>
+
+      <div class="key-takeaway">
+        <strong>Key Takeaway:</strong> The barrier to entry for app development is virtually gone. The winners are those who can identify small, specific problems and solve them quickly with AI-powered no-code solutions. It's about 'shipping fast' over 'building big.'
+      </div>
+
+      <div class="section">
+        <h2>🛠 Essential Tools & Platforms</h2>
+        <p>You don't need to be a developer to build profitable apps anymore. These tools empower rapid prototyping and deployment:</p>
+        <div class="tool-list">
+          <div class="tool-item">Bubble (No-code Web Apps)</div>
+          <div class="tool-item">Adalo (No-code Mobile Apps)</div>
+          <div class="tool-item">Softr (Web Apps from Airtable)</div>
+          <div class="tool-item">ChatGPT / Claude (Idea & Code Generation)</div>
+          <div class="tool-item">Replit (AI-assisted Coding)</div>
+          <div class="tool-item">Cursor (AI-first Code Editor)</div>
+          <div class="tool-item">Zapier / Make (Automation)</div>
+          <div class="tool-item">Stripe (Payment Processing)</div>
+        </div>
+        <p>Focus on mastering one or two no-code platforms and combining them with AI for rapid development cycles. The goal is to get a Minimum Viable Product (MVP) to market in weeks, not months.</p>
+      </div>
+
+      <div class="section">
+        <h2>⚠️ Top 3 Risks & How to Avoid Them</h2>
+        <div class="risk-item">
+          <h4>1. Building Without Validation (High Risk)</h4>
+          <p><strong>Problem:</strong> Spending weeks or months building an app nobody wants. This is the #1 killer of micro-SaaS ventures.
+          <br><span class="fix-label">Fix:</span> Use the Instant Side Hustle Checker (on the homepage) and talk to potential customers before writing any code. Build only what people explicitly ask for.</p>
+        </div>
+        <div class="risk-item moderate">
+          <h4>2. Feature Bloat (Moderate Risk)</h4>
+          <p><strong>Problem:</strong> Trying to add too many features to your MVP. This delays launch and complicates testing.
+          <br><span class="fix-label">Fix:</span> Start with one core feature that solves a single pain point exceptionally well. You can always add more later based on user feedback.</p>
+        </div>
+        <div class="risk-item low">
+          <h4>3. Ignoring Marketing (Moderate Risk)</h4>
+          <p><strong>Problem:</strong> Assuming a great product will sell itself. It won't. Marketing is crucial for discovery.
+          <br><span class="fix-label">Fix:</span> Allocate time daily to outreach, content creation (blog, X/Twitter), and community engagement. Even basic SEO can bring early users.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>🚀 Step-by-Step Launch Plan</h2>
+        <div class="step-guide">
+          <div class="step">
+            <span class="step-num">1</span>
+            <div class="step-content">
+              <h4>Validate Your Idea (Day 1-3)</h4>
+              <p>Use the Side Hustle Lab's Instant Checker. Talk to at least 5 potential customers. Identify their core pain point and how your app would solve it. Don't write a single line of code until you've done this.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-num">2</span>
+            <div class="step-content">
+              <h4>Build Your MVP (Week 1-2)</h4>
+              <p>Pick one no-code tool (e.g., Bubble for web, Adalo for mobile). Focus on the absolute minimum features needed to solve the validated problem. Leverage AI tools (ChatGPT, Cursor) to assist with any code snippets or complex logic.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-num">3</span>
+            <div class="step-content">
+              <h4>Launch & Get Feedback (Week 3-4)</h4>
+              <p>Deploy your MVP. Share it with your initial 5 customers and ask for honest feedback. Use communities like BetaList, Product Hunt (for early versions), and relevant subreddits (carefully, avoid spamming).</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-num">4</span>
+            <div class="step-content">
+              <h4>Iterate & Grow (Month 2+)</h4>
+              <p>Based on feedback, add features, refine UI/UX, and optimize your marketing. Focus on retention and getting early testimonials. Automate customer service using AI where possible to free up your time.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="source-list">
+        <h2>Sources & Further Reading:</h2>
+        <a href="https://www.microconf.com/" target="_blank">MicroConf: The community for bootstrapped founders</a>
+        <a href="https://www.indiehackers.com/" target="_blank">Indie Hackers: Learn from profitable online businesses</a>
+        <a href="https://www.saasclub.io/" target="_blank">SaaS Club: Resources for SaaS founders</a>
+      </div>
+
+      <a href="https://buy.stripe.com/eVq28scmlbP8aAHefa0RG08" class="cta-buy" style="margin-top: 50px;" target="_blank">Get this report for $7 →</a>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      &copy; 2026 Side Hustle Lab. Built by 🐝 Bee. <a href="mailto:bee.assistant1@gmail.com">Contact</a>
+    </div>
+  </footer>
+</body>
+</html>
