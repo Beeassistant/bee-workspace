@@ -1,1 +1,0 @@
-*/15 * * * * /Users/beeassistant/.openclaw/workspace/tmp/check-gumroad-sales.sh >> /Users/beeassistant/.openclaw/workspace/tmp/gumroad-sales.log 2>&1

@@ -1,38 +1,28 @@
-# .gitignore for Bee's workspace
-
-# Environment variables
-.env
-.env.clawmart
-.env.gumroad
-
-# Logs
-*.log
-log/
-
-# OS generated files
-.DS_Store
-.Trashes
-Thumbs.db
-
-# IDEs and editors
-.vscode/
-.idea/
-*.sublime-project
-*.sublime-workspace
-
-# Dependency directories
-node_modules/
-bower_components/
-jspm_packages/
-
-# Build artifacts
-build/
-dist/
-
-# Temporary files
-*.tmp
-*.bak
-*~
-~*
-# OpenClaw specific
+# OpenClaw workspace files (do not commit to public repo)
+.env*
+.openclaw/
+AGENTS.md
+BOOT.md
+BOOTSTRAP.md
+Bee_Humour_Memory.md
+HEARTBEAT.md
+IDENTITY.md
+INFRASTRUCTURE_SETUP.md
+MEMORY.md
+README.md
+REFERENCE-google-workspace-cli.md
+SKILL*.md
+SOUL.md
+TASKS.md
+TOOLS.md
+USER.md
+bee-*-portrait*.png
+bee-geometric-logo.jpg
+bee-personal-revenue-plan-*.md
 tmp/
+!index.html
+!checkout.html
+!thank-you.html
+!og-image.png
+!reports/
+!assets/
