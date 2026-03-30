@@ -19,7 +19,8 @@ Run this checklist on every heartbeat. Adapt the specific checks to your busines
 
 **This is non-negotiable.** A progress report that ignores active threads is incomplete and unacceptable.
 
-## Morning Brief (run at start of day — 9:15am "Daily Revenue Sprint" cron)
+## Morning Brief (run at start of day — 9:00am "Daily Revenue Sprint" cron)
+**⚠️ CRITICAL: The cron handles the morning brief at 9:00am Bangkok time. DO NOT send morning briefs from heartbeat or at any other time. The "Daily Revenue Sprint" cron is the ONLY source of the morning brief.**
 **Read FIRST:** `~/clawd/tmp/clawmart-morning-sales.txt` — this is the ClawMart totalSales checked at 7am by the `clawmart-sales-morning-check` cron. Include this number in the brief.
 Then proceed with the full heartbeat checklist above.
 
