@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirm Your Purchase — Side Hustle Lab</title>
+  <style>
+    :root {
+      --bg: #0a0a0f; --bg2: #111118; --bg3: #1a1a24; --text: #f0f0f5; --text-dim: #8888a0;
+      --accent: #7c3aed; --accent2: #a855f7; --accent-grad: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%);
+      --accent-bg: rgba(124, 58, 237, 0.1); --border: rgba(255,255,255,0.08); --card-bg: #111118;
+      --success: #10b981; --warning: #f59e0b; --danger: #ef4444; --radius: 12px; --radius-sm: 8px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; }
+    .container { max-width: 500px; width: 100%; margin: 0 auto; }
+    .checkout-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 40px 30px; text-align: center; }
+    h1 { font-size: 1.8rem; font-weight: 800; background: var(--accent-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px; }
+    .subtitle { color: var(--text-dim); margin-bottom: 24px; font-size: 0.95rem; }
+    .product-info { background: var(--bg3); border-radius: var(--radius-sm); padding: 20px; margin-bottom: 24px; text-align: left; }
+    .product-info h3 { font-size: 1.1rem; margin-bottom: 8px; color: var(--text); }
+    .product-info p { font-size: 0.88rem; color: var(--text-dim); margin-bottom: 12px; }
+    .product-price { font-size: 1.5rem; font-weight: 800; background: var(--accent-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .form-group { margin-bottom: 16px; text-align: left; }
+    .form-label { display: block; font-size: 0.88rem; color: var(--text-dim); margin-bottom: 6px; }
+    .form-input { width: 100%; background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px 14px; font-size: 1rem; color: var(--text); font-family: inherit; outline: none; transition: border-color 0.2s; }
+    .form-input:focus { border-color: var(--accent); }
+    .consent-checkbox { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 20px; padding: 14px; background: var(--bg3); border-radius: var(--radius-sm); border: 1px solid var(--border); }
+    .consent-checkbox input[type="checkbox"] { margin-top: 3px; accent-color: var(--accent); width: 16px; height: 16px; flex-shrink: 0; }
+    .consent-checkbox label { font-size: 0.82rem; color: var(--text-dim); line-height: 1.5; cursor: pointer; }
+    .consent-checkbox a { color: var(--accent2); text-decoration: underline; }
+    .btn-pay { display: block; width: 100%; padding: 14px; background: var(--accent-grad); border: none; border-radius: var(--radius-sm); color: white; font-size: 1rem; font-weight: 700; cursor: pointer; transition: opacity 0.2s; font-family: inherit; text-align: center; text-decoration: none; }
+    .btn-pay:hover { opacity: 0.9; }
+    .btn-pay:disabled { opacity: 0.5; cursor: not-allowed; }
+    .note { font-size: 0.78rem; color: var(--text-dim); margin-top: 20px; }
+    .error-message { color: var(--danger); font-size: 0.85rem; margin-top: -10px; margin-bottom: 10px; text-align: left; }
+    @media (max-width: 600px) {
+      .checkout-card { padding: 30px 20px; }
+      h1 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="checkout-card">
+      <h1 id="pageTitle">Confirm Your Purchase</h1>
+      <p class="subtitle" id="pageSubtitle">Enter your email to receive your report</p>
+
+      <div class="product-info" id="productInfo">
+        <!-- Product details will be loaded here by JavaScript -->
+      </div>
+
+      <form id="preCheckoutForm">
+        <div class="form-group">
+          <label for="customerEmail" class="form-label">Email Address</label>
+          <input type="email" id="customerEmail" class="form-input" placeholder="you@example.com" required>
+          <div class="error-message" id="emailError"></div>
+        </div>
+        <div class="consent-checkbox">
+          <input type="checkbox" id="gdprConsent" required>
+          <label for="gdprConsent">I agree to receive the purchased report and future updates from Side Hustle Lab. My data will be handled according to the <a href="#" target="_blank">Privacy Policy</a>.</label>
+        </div>
+        <div class="error-message" id="consentError"></div>
+        <button type="submit" id="continueButton" class="btn-pay">Continue to Payment →</button>
+        <p class="note">You will be redirected to Stripe for secure payment. Report will be emailed within 10 minutes.</p>
+      </form>
+
+      <a href="index.html" class="back-link" style="display: block; margin-top: 30px; font-size: 0.9rem; color: var(--text-dim); text-decoration: none;">← Back to Side Hustle Lab</a>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const pageTitle = document.getElementById('pageTitle');
+      const pageSubtitle = document.getElementById('pageSubtitle');
+      const productInfo = document.getElementById('productInfo');
+      const customerEmailInput = document.getElementById('customerEmail');
+      const gdprConsentCheckbox = document.getElementById('gdprConsent');
+      const preCheckoutForm = document.getElementById('preCheckoutForm');
+      const continueButton = document.getElementById('continueButton');
+      const emailError = document.getElementById('emailError');
+      const consentError = document.getElementById('consentError');
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const type = urlParams.get('type'); // 'paid' or 'custom'
+
+      let reportName = '';
+      let reportPrice = 0;
+      let stripePaidLink = '';
+
+      if (type === 'paid') {
+        reportName = localStorage.getItem('selectedReportName');
+        reportPrice = localStorage.getItem('selectedReportPrice');
+        stripePaidLink = localStorage.getItem('selectedReportPaidLink');
+
+        if (!reportName || !reportPrice || !stripePaidLink) {
+          productInfo.innerHTML = '<p style="color: var(--danger);">Error: Report details not found. Please go back to the homepage and select a report.</p>';
+          preCheckoutForm.style.display = 'none';
+          return;
+        }
+
+        pageTitle.textContent = `Get Your ${reportName} Report`;
+        pageSubtitle.textContent = `Confirm details and enter your email`;
+        productInfo.innerHTML = `
+          <h3>${reportName}</h3>
+          <p class="product-price">$${reportPrice}</p>
+        `;
+
+      } else if (type === 'custom') {
+        const customReportIdea = localStorage.getItem('customReportIdea');
+        const customReportEmail = localStorage.getItem('customReportEmail'); // Pre-fill if already entered
+        
+        reportName = 'Custom Side Hustle Report';
+        reportPrice = 25; // Hardcoded price for custom reports
+        stripePaidLink = 'https://buy.stripe.com/14A7wY2LL2i44cj9AF'; // Generic custom report Stripe link
+
+        pageTitle.textContent = `Get Your Custom Report`;
+        pageSubtitle.textContent = `Confirm details and enter your email`;
+        productInfo.innerHTML = `
+          <h3>${reportName}</h3>
+          <p>Your Idea: ${customReportIdea || 'Not provided'}</p>
+          <p class="product-price">$${reportPrice}</p>
+        `;
+        if (customReportEmail) {
+          customerEmailInput.value = customReportEmail;
+        }
+
+      } else {
+        productInfo.innerHTML = '<p style="color: var(--danger);">Error: Invalid purchase type. Please go back to the homepage.</p>';
+        preCheckoutForm.style.display = 'none';
+        return;
+      }
+
+      preCheckoutForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        emailError.textContent = '';
+        consentError.textContent = '';
+
+        const customerEmail = customerEmailInput.value;
+        const consentGiven = gdprConsentCheckbox.checked;
+
+        if (!customerEmail) {
+          emailError.textContent = 'Email address is required.';
+          return;
+        }
+        if (!consentGiven) {
+          consentError.textContent = 'You must agree to the terms to proceed.';
+          return;
+        }
+
+        // Store final email for thank-you page
+        localStorage.setItem('customerEmailForDelivery', customerEmail);
+        localStorage.setItem('customerConsentForDelivery', 'true');
+        localStorage.setItem('purchasedReportName', reportName);
+        localStorage.setItem('purchasedReportPrice', reportPrice);
+
+        // Construct Stripe redirect URL with metadata
+        let finalStripeLink = stripePaidLink;
+        const originalUrl = new URL(stripePaidLink);
+        originalUrl.searchParams.set('client_reference_id', customerEmail);
+        originalUrl.searchParams.set('metadata[reportName]', encodeURIComponent(reportName));
+        originalUrl.searchParams.set('metadata[gdprConsent]', 'true');
+        
+        // Add custom report idea if applicable
+        if (type === 'custom') {
+          const customReportIdea = localStorage.getItem('customReportIdea');
+          if (customReportIdea) {
+            originalUrl.searchParams.set('metadata[customerIdea]', encodeURIComponent(customReportIdea));
+          }
+        }
+
+        // Add success_url for redirection
+        originalUrl.searchParams.set('success_url', window.location.origin + '/thank-you-email.html?session_id={CHECKOUT_SESSION_ID}');
+        originalUrl.searchParams.set('cancel_url', window.location.origin + '/index.html'); // Optional cancel URL
+
+        finalStripeLink = originalUrl.toString();
+        window.location.href = finalStripeLink;
+      });
+    });
+  </script>
+</body>
+</html>

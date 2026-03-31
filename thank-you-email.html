@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You! — Side Hustle Lab</title>
+  <style>
+    :root {
+      --bg: #0a0a0f; --bg2: #111118; --bg3: #1a1a24; --text: #f0f0f5; --text-dim: #8888a0;
+      --accent: #7c3aed; --accent2: #a855f7; --accent-grad: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%);
+      --accent-bg: rgba(124, 58, 237, 0.1); --border: rgba(255,255,255,0.08); --card-bg: #111118;
+      --success: #10b981; --warning: #f59e0b; --danger: #ef4444; --radius: 12px; --radius-sm: 8px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; }
+    .container { max-width: 800px; width: 100%; margin: 0 auto; }
+    .thank-you-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 40px 30px; text-align: center; }
+    h1 { font-size: 2.2rem; font-weight: 800; background: var(--accent-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px; }
+    .subtitle { color: var(--success); margin-bottom: 24px; font-size: 1.1rem; font-weight: 600; }
+    .report-display { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 20px; text-align: left; margin-bottom: 30px; min-height: 200px; }
+    .report-display h2 { font-size: 1.4rem; margin-bottom: 15px; color: var(--text); }
+    .report-content p { margin-bottom: 10px; font-size: 0.95rem; color: var(--text-dim); }
+    .email-note { font-size: 0.9rem; color: var(--text-dim); margin-top: 20px; }
+    .btn-home { display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; background: var(--accent-grad); color: white; border-radius: var(--radius-sm); font-size: 1rem; font-weight: 700; text-decoration: none; margin-top: 30px; transition: opacity 0.2s; }
+    .btn-home:hover { opacity: 0.9; }
+    .error-message { color: var(--danger); font-size: 0.95rem; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="thank-you-card">
+      <h1>Thank You for Your Purchase!</h1>
+      <p class="subtitle">Your report is ready and has been emailed to you.</p>
+
+      <div class="report-display" id="reportDisplay">
+        <h2>Loading Report...</h2>
+        <p class="report-content">Please wait a moment while your report loads. If it doesn't appear, check your email!</p>
+      </div>
+      <p class="email-note">Didn't receive the email? Check your spam folder or contact <a href="mailto:bee.assistant1@gmail.com">bee.assistant1@gmail.com</a>.</p>
+      <a href="index.html" class="btn-home">← Back to Side Hustle Lab</a>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const reportDisplay = document.getElementById('reportDisplay');
+      const urlParams = new URLSearchParams(window.location.search);
+      const sessionId = urlParams.get('session_id');
+
+      let purchasedReportName = localStorage.getItem('purchasedReportName');
+      let customerEmail = localStorage.getItem('customerEmailForDelivery');
+
+      // For security, ideally, report content should be fetched server-side based on session ID
+      // But for this static site, we will display content based on localStorage and a simple fetch
+
+      if (purchasedReportName) {
+        let reportFilePath = '';
+        // Special handling for Custom Report
+        if (purchasedReportName === 'Custom Side Hustle Report') {
+          reportFilePath = 'reports/paid/custom-report-placeholder.html'; // Placeholder for custom report
+        } else {
+          // Standard paid reports
+          const normalizedName = purchasedReportName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+          reportFilePath = `reports/paid/${normalizedName}-2026.html`;
+        }
+
+        try {
+          const response = await fetch(reportFilePath);
+          if (response.ok) {
+            const reportContent = await response.text();
+            reportDisplay.innerHTML = `<div class="report-content">${reportContent}</div>`;
+          } else {
+            reportDisplay.innerHTML = '<p class="error-message">Error: Could not load report content. Please check your email.</p>';
+          }
+        } catch (error) {
+          reportDisplay.innerHTML = '<p class="error-message">Error fetching report: ' + error.message + '. Please check your email.</p>';
+        }
+      } else {
+        reportDisplay.innerHTML = '<p class="error-message">Error: No purchase details found. Please check your email for the report.</p>';
+      }
+
+      // Clear localStorage after displaying the report (to prevent re-display on refresh)
+      localStorage.removeItem('selectedReportName');
+      localStorage.removeItem('selectedReportPrice');
+      localStorage.removeItem('selectedReportPaidLink');
+      localStorage.removeItem('customerEmailForDelivery');
+      localStorage.removeItem('customerConsentForDelivery');
+      localStorage.removeItem('purchasedReportName');
+      localStorage.removeItem('customReportIdea');
+      localStorage.removeItem('customReportEmail');
+    });
+  </script>
+</body>
+</html>

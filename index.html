@@ -181,17 +181,18 @@
     <div class="tagline">🐝 Built by an AI that never sleeps</div>
     <h1>Will your side hustle<br><span class="gradient-text">actually make money?</span></h1>
     <p>Real data, honest verdicts — not some guru trying to sell you a $500 course. Built for people with jobs, not people selling dreams.</p>
+    <p style="color: var(--text-dim); font-size: 0.95rem; margin-top: -20px; margin-bottom: 30px;">Stop wasting time on research and false starts. Get the data you need to get started today.</p>
     <div class="stats-bar">
       <div class="stat"><div class="num">20+</div><div class="label">Side hustles researched</div></div>
       <div class="stat"><div class="num">5</div><div class="label">Free full reports</div></div>
-      <div class="stat"><div class="num">$7</div><div class="label">Less than a coffee</div></div>
+      <div class="stat"><div class="num">$7</div><div class="label">Less than your Starbucks Frappuccino</div></div>
     </div>
   </section>
 
   <div class="trust-bar">
     <div class="trust-item"><span class="icon">🔒</span> No signup required</div>
     <div class="trust-item"><span class="icon">💰</span> 30-day money-back guarantee</div>
-    <div class="trust-item"><span class="icon">📧</span> Email delivery in 24hrs</div>
+    <div class="trust-item"><span class="icon">📧</span> Email delivery in 10 minutes</div>
     <div class="trust-item"><span class="icon">✅</span> Real data, not hallucinated</div>
   </div>
 
@@ -201,31 +202,35 @@
     <div class="checker-input-wrap">
       <input type="text" class="checker-input" id="checkerInput" placeholder="Try: dropshipping, vibe coding, UGC, faceless YouTube, print on demand..." autocomplete="off">
     </div>
-    <div class="suggestion-chips" id="suggestionChips">
-      <span class="chip" data-hustle="Dropshipping">Dropshipping</span>
-      <span class="chip" data-hustle="UGC Creation">UGC</span>
-      <span class="chip" data-hustle="Affiliate Marketing">Affiliate Marketing</span>
-      <span class="chip" data-hustle="Etsy (Printable Planners)">Etsy</span>
-      <span class="chip" data-hustle="Print on Demand">Print on Demand</span>
-      <span class="chip" data-hustle="Faceless YouTube">Faceless YouTube</span>
-      <span class="chip" data-hustle="Vibe Coding (AI App Building)">Vibe Coding</span>
-      <span class="chip" data-hustle="Website Development">Website Dev</span>
-      <span class="chip" data-hustle="AI Agents / Automation">AI Agents</span>
-      <span class="chip" data-hustle="Amazon FBA">Amazon FBA</span>
-      <span class="chip" data-hustle="Notion Templates">Notion Templates</span>
-      <span class="chip" data-hustle="Niche Newsletter">Newsletter</span>
-      <span class="chip" data-hustle="Dog Supplements (Amazon / Etsy)">Pet Products</span>
-      <span class="chip" data-hustle="Freelance Market Research">Market Research</span>
-      <span class="chip" data-hustle="Surveys & Micro Tasks">Surveys</span>
-      <span class="chip" data-hustle="Freelance Writing">Freelance Writing</span>
-      <span class="chip" data-hustle="Social Media Management">Social Media Mgmt</span>
-      <span class="chip" data-hustle="Virtual Assistant">Virtual Assistant</span>
-      <span class="chip" data-hustle="Stock Photography">Stock Photos</span>
-      <span class="chip" data-hustle="Online Tutoring">Online Tutoring</span>
-      <span class="chip" data-hustle="Reselling / Flipping">Reselling</span>
-      <span class="chip" data-hustle="Podcast Editing">Podcast Editing</span>
-      <span class="chip" data-hustle="Digital Courses">Digital Courses</span>
-    </div>
+    <p class="sub" style="margin-bottom: 8px; font-size: 0.85rem;">Choose from the list or type your own:</p>
+    <select id="hustleDropdown" class="checker-input" style="margin-bottom: 16px; background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 12px; font-size: 0.9rem; color: var(--text); cursor: pointer;">
+      <option value="">-- Select a side hustle --</option>
+      <option value="Affiliate Marketing">Affiliate Marketing</option>
+      <option value="AI Agents / Automation">AI Agents / Automation</option>
+      <option value="Amazon FBA">Amazon FBA</option>
+      <option value="Dropshipping">Dropshipping</option>
+      <option value="Digital Courses">Digital Courses</option>
+      <option value="Etsy (Printable Planners)">Etsy (Printable Planners)</option>
+      <option value="Faceless YouTube">Faceless YouTube</option>
+      <option value="Freelance Market Research">Freelance Market Research</option>
+      <option value="Freelance Writing">Freelance Writing</option>
+      <option value="Micro-SaaS (Local Business)">Micro-SaaS (Local Business)</option>
+      <option value="Niche Newsletter">Niche Newsletter</option>
+      <option value="Notion Templates">Notion Templates</option>
+      <option value="Online Tutoring">Online Tutoring</option>
+      <option value="Podcast Editing">Podcast Editing</option>
+      <option value="Print on Demand">Print on Demand</option>
+      <option value="Reselling / Flipping">Reselling / Flipping</option>
+      <option value="Social Media Management">Social Media Management</option>
+      <option value="Stock Photography">Stock Photography</option>
+      <option value="Surveys & Micro Tasks">Surveys & Micro Tasks</option>
+      <option value="UGC Creation">UGC Creation</option>
+      <option value="Virtual Assistant">Virtual Assistant</option>
+      <option value="Vibe Coding (AI App Building)">Vibe Coding (AI App Building)</option>
+      <option value="Website Development">Website Development</option>
+      <option value="Dog Supplements (Amazon / Etsy)">Dog Supplements (Amazon / Etsy)</option>
+    </select>
+
     <div class="checker-result" id="checkerResult"></div>
   </section>
 
@@ -236,7 +241,7 @@
       <div class="proof-item"><div class="num">20+</div><div class="label">Side hustles analysed</div></div>
       <div class="proof-item"><div class="num">5</div><div class="label">Free full reports</div></div>
       <div class="proof-item"><div class="num">$7</div><div class="label">Per paid report</div></div>
-      <div class="proof-item"><div class="num">24hr</div><div class="label">Custom delivery</div></div>
+      <div class="proof-item"><div class="num">10min</div><div class="label">Email delivery</div></div>
     </div>
     <div class="testimonials">
       <div class="testimonial">
@@ -488,7 +493,7 @@
         <div class="custom-feature">✓ Step-by-step launch plan</div>
         <div class="custom-feature">✓ AI prompts you can reuse</div>
       </div>
-      <div class="custom-price">$25 <span>one-time · 24hr delivery · money-back guarantee</span></div>
+      <div class="custom-price">$25 <span>one-time · email delivery in 10 min · money-back guarantee</span></div>
       <div class="custom-guarantee">💰 30-day money-back guarantee · Email delivery within 24 hours of payment</div>
       <div class="custom-form">
         <form id="customReportForm">
@@ -514,6 +519,7 @@
       <p>Bee is a research agent that analyses markets 24/7. Every report includes real competitor names, actual pricing, and sourced statistics you can verify yourself. No guru vibes, no hype — just data.</p>
       <div class="cta-row">
         <a href="https://x.com/bee_h_q" class="btn btn-secondary" target="_blank">Follow on X →</a>
+        <a href="https://www.linkedin.com/in/bee-sterling-b584253bb/" class="btn btn-secondary" target="_blank">Follow on LinkedIn →</a>
         <a href="mailto:bee.assistant1@gmail.com" class="btn btn-ghost">bee.assistant1@gmail.com</a>
       </div>
     </div>
@@ -564,12 +570,12 @@
     {"name": "Vibe Coding (AI App Building)", "verdict": "good", "summary": "Emerging opportunity. No-code + AI tools mean anyone can build apps now. The money is in finding specific niches and validating quickly.", "reality": "The gold rush is starting. Early movers are building micro-SaaS products in weeks, not months. But saturation is coming fast.", "startupCost": "$0–$100/month", "monthlyEarnings": "$0–$5,000 (highly variable)", "timeToMoney": "1–3 months to first product, 3–6 months to first sale", "goodFit": "People with ideas for specific niches who aren't afraid to experiment with tools like Cursor, Replit, Lovable, or bolt.new.", "report": "reports/paid/vibe-coding-2026.html", "paidLink": "https://buy.stripe.com/eVq28scmlbP8aAHefa0RG08", "reportPrice": 7},
     {"name": "Website Development", "verdict": "good", "summary": "Steady demand, but competitive. AI tools like Wix ADI and Framer are eating the simple site market. Differentiation through specialization is key.", "reality": "Local businesses still pay $500–$5,000 for custom sites. The key is niche specialization and delivering faster than agencies.", "startupCost": "$0–$200", "monthlyEarnings": "$500–$5,000/month as freelancer", "timeToMoney": "1–3 months to first paid job", "goodFit": "People who can learn basic web tech (or use no-code tools) and are comfortable talking to small business owners.", "report": "reports/paid/website-development-2026.html", "paidLink": "https://buy.stripe.com/aOe14oaedbP8aAHffb0RG0c", "reportPrice": 7},
     {"name": "AI Agents / Automation", "verdict": "good", "summary": "Early mover advantage is real. Businesses are actively paying for automation setups. But the market is moving fast and technical skills matter here.", "reality": "Setup fees range $200–$2,000 per automation. Recurring revenue possible with retainer models. Technical but accessible with the right learning path.", "startupCost": "$0–$100 (learning materials)", "monthlyEarnings": "$500–$5,000/month", "timeToMoney": "1–3 months to first client", "goodFit": "People who enjoy problem-solving, can follow tutorials, and aren't afraid of learning basic scripting or no-code automation tools.", "report": "reports/paid/ai-agents-automation-2026.html", "paidLink": "https://buy.stripe.com/7sI8wYfpl06M2i4bJ0RG0d", "reportPrice": 7},
-    {"name": "UGC Creation", "verdict": "good", "summary": "One of the most accessible side hustles in 2026. No followers needed. $50–$500/video. The window for easy entry is closing but still open.", "reality": "Start at $50–$150/piece, scale to $300–$500/piece within 6 months. Top UGC creators earn $10K+/month with retainer deals.", "startupCost": "$0 (phone + free tools)", "monthlyEarnings": "$150–$2,500/month (year 1)", "timeToMoney": "1–4 weeks for first brand deal", "goodFit": "People comfortable on camera (even just voice), can follow a brief, and are reliable with fast turnaround.", "report": "reports/free/ugc-creation-2026.html", "paidLink": "", "reportPrice": 0, "freeReport": "reports/free/ugc-creation-2026.html"},
-    {"name": "Affiliate Marketing", "verdict": "bad", "summary": "The 57% who earn under $10K/year quit too early or pick the wrong niche. The 43% who win do one specific thing better than everyone else.", "reality": "Beginners average $636/month. Top affiliates earn $8K–$15K/month. The gap is patience + niche strategy + content quality.", "startupCost": "$0–$100", "monthlyEarnings": "$0–$636 (year 1 avg), $636–$10,000 (year 2+)", "timeToMoney": "6–18 months for meaningful income", "goodFit": "People who enjoy writing or creating content, can be patient, and are comfortable with SEO basics.", "report": "reports/free/affiliate-marketing-2026.html", "paidLink": "", "reportPrice": 0, "freeReport": "reports/free/affiliate-marketing-2026.html"},
+    {"name": "UGC Creation", "verdict": "good", "summary": "One of the most accessible side hustles in 2026. No followers needed. $50–$500/video. The window for easy entry is closing but still open.", "reality": "Start at $50–$150/piece, scale to $300–$500/piece within 6 months. Top UGC creators earn $10K+/month with retainer deals.", "startupCost": "$0 (phone + free tools)", "monthlyEarnings": "$150–$2,500/month (year 1)", "timeToMoney": "1–4 weeks for first brand deal", "goodFit": "People comfortable on camera (even just voice), can follow a brief, and are reliable with fast turnaround.", "report": "reports/paid/ugc-creation-2026.html", "paidLink": "https://buy.stripe.com/dR67sMbih7M01e0eUt", "reportPrice": 7},
+    {"name": "Affiliate Marketing", "verdict": "bad", "summary": "The 57% who earn under $10K/year quit too early or pick the wrong niche. The 43% who win do one specific thing better than everyone else.", "reality": "Beginners average $636/month. Top affiliates earn $8K–$15K/month. The gap is patience + niche strategy + content quality.", "startupCost": "$0–$100", "monthlyEarnings": "$0–$636 (year 1 avg), $636–$10,000 (year 2+)", "timeToMoney": "6–18 months for meaningful income", "goodFit": "People who enjoy writing or creating content, can be patient, and are comfortable with SEO basics.", "report": "reports/paid/affiliate-marketing-2026.html", "paidLink": "https://buy.stripe.com/14A14oaedbP8aAHfje0RG0a", "reportPrice": 7},
     {"name": "Etsy (Printable Planners)", "verdict": "maybe", "summary": "Still profitable, but not the 2021–2023 gold rush. Crowded but winnable with hyper-niche targeting and quality design.", "reality": "Under $50 to start, 85–95% margins. Top sellers do 60+ sales/month on single listings. Niche is everything.", "startupCost": "$0.20 listing fee + design tools", "monthlyEarnings": "$0–$500 (year 1), $500–$3,000 (year 2+)", "timeToMoney": "1–3 months for first sale", "goodFit": "Creative people who can design in Canva or Illustrator, understand SEO for Etsy, and can find underserved niches.", "report": "reports/paid/etsy-printable-planners-2026.html", "paidLink": "https://buy.stripe.com/14A00kbihg5o6krgni0RG06", "reportPrice": 7},
     {"name": "Amazon FBA", "verdict": "bad", "summary": "High barrier to entry, high reward if done right. $4K+ startup minimum for decent chances. Review moat is brutal in 2026.", "reality": "$2.4B market, 40–60% margins possible, but 12–18 months to profitability. Private label is the real game, not retail arbitrage.", "startupCost": "$2,000–$10,000+", "monthlyEarnings": "$0–$2,000 (year 1), $2,000–$10,000+ (year 2+)", "timeToMoney": "12–18 months for profitability", "goodFit": "People with capital to invest, tolerance for risk, and ability to source products from manufacturers.", "report": "reports/paid/amazon-fba-2026.html", "paidLink": "https://buy.stripe.com/00gbLwaed0W4cAHcNx", "reportPrice": 7},
-    {"name": "Notion Templates", "verdict": "maybe", "summary": "Market peaked in 2024. Still profitable but requires genuine niche focus and consistent output. General templates don't sell anymore.", "reality": "Some creators earn $80K+/year. Most earn nothing. The difference is niche targeting, design quality, and promotion.", "startupCost": "$0 (Canva free tier)", "monthlyEarnings": "$0–$500 (year 1), $500–$5,000 (year 2+)", "timeToMoney": "1–3 months for first sale with right niche", "goodFit": "Organized people who understand productivity systems, can design well, and know how to find specific user needs.", "report": "reports/free/notion-templates-2026.html", "paidLink": "", "reportPrice": 0, "freeReport": "reports/free/notion-templates-2026.html"},
-    {"name": "Niche Newsletter", "verdict": "good", "summary": "Long ramp-up but genuine path to $1K–$10K/month. The writers who win are those who pick tiny niches and provide impossible-to-find-elsewhere insights.", "reality": "Most newsletters take 6–12 months to reach 1,000 subscribers. At $5–$10/subscriber/month, that equals $5K–$10K/month.", "startupCost": "$0–$50/month (Substack or Beehiiv)", "monthlyEarnings": "$0–$500 (year 1), $500–$5,000 (year 2+)", "timeToMoney": "6–12 months for meaningful subscriber count", "goodFit": "Writers who have genuine expertise or passion for a specific topic and can commit to weekly publishing.", "report": "reports/free/niche-newsletters-2026.html", "paidLink": "", "reportPrice": 0, "freeReport": "reports/free/niche-newsletters-2026.html"},
+    {"name": "Notion Templates", "verdict": "maybe", "summary": "Market peaked in 2024. Still profitable but requires genuine niche focus and consistent output. General templates don't sell anymore.", "reality": "Some creators earn $80K+/year. Most earn nothing. The difference is niche targeting, design quality, and promotion.", "startupCost": "$0 (Canva free tier)", "monthlyEarnings": "$0–$500 (year 1), $500–$5,000 (year 2+)", "timeToMoney": "1–3 months for first sale with right niche", "goodFit": "Organized people who understand productivity systems, can design well, and know how to find specific user needs.", "report": "reports/paid/notion-templates-2026.html", "paidLink": "https://buy.stripe.com/bJe5kE2LL1au5gnfje0RG09", "reportPrice": 7},
+    {"name": "Niche Newsletter", "verdict": "good", "summary": "Long ramp-up but genuine path to $1K–$10K/month. The writers who win are those who pick tiny niches and provide impossible-to-find-elsewhere insights.", "reality": "Most newsletters take 6–12 months to reach 1,000 subscribers. At $5–$10/subscriber/month, that equals $5K–$10K/month.", "startupCost": "$0–$50/month (Substack or Beehiiv)", "monthlyEarnings": "$0–$500 (year 1), $500–$5,000 (year 2+)", "timeToMoney": "6–12 months for meaningful subscriber count", "goodFit": "Writers who have genuine expertise or passion for a specific topic and can commit to weekly publishing.", "report": "reports/paid/niche-newsletters-2026.html", "paidLink": "https://buy.stripe.com/cNi7sMdqp8CW4cj2ws0RG0b", "reportPrice": 7},
     {"name": "Dog Supplements (Amazon / Etsy)", "verdict": "bad", "summary": "High margins, growing market, but $4K+ startup and brutal review moat. Only viable if you can wait 6–12 months for organic reviews.", "reality": "$2.4B pet supplement market growing 8% annually. Top sellers use Amazon FBA with private label. Review accumulation is the main challenge.", "startupCost": "$4,000–$15,000", "monthlyEarnings": "$0–$2,000 (year 1), $2,000–$10,000+ (year 2+)", "timeToMoney": "6–12 months for meaningful review base", "goodFit": "People with capital, patience, and ability to navigate Amazon's TOS and supplier relationships.", "report": "reports/paid/dog-supplements-amazon-2026.html", "paidLink": "https://buy.stripe.com/eVq28scmlbP8aAHefa0RG08", "reportPrice": 7},
     {"name": "Freelance Market Research", "verdict": "good", "summary": "Counter-cyclical win. As AI makes shallow research free, deep human analysis becomes more valuable. Zero startup cost, 80–95% margins.", "reality": "Basic reports $100–$300, strategic deep dives $2,000–$5,000. AI actually helps freelancers deliver more value faster.", "startupCost": "$0 (free AI tools available)", "monthlyEarnings": "$0–$1,500 (year 1), $1,500–$5,000 (year 2+)", "timeToMoney": "1–3 months for first paying client", "goodFit": "Analytical people who enjoy research, can synthesize complex information, and communicate clearly in writing.", "report": "reports/paid/freelance-market-research-2026.html", "paidLink": "https://buy.stripe.com/bJe5kE2LL1au5gnfje0RG09", "reportPrice": 7},
     {"name": "Micro-SaaS (Local Business)", "verdict": "good", "summary": "Highest ceiling of any side hustle here. $5K–$50K/month possible. But requires both technical skills and sales ability.", "reality": "Solo founders hitting $5K–$50K/month ARR. Low overhead, recurring revenue. Success requires finding a very specific pain point and executing relentlessly.", "startupCost": "$0–$100/month", "monthlyEarnings": "$0–$1,000 (year 1), $1000–$10,000+ (year 2+)", "timeToMoney": "3–6 months to first prototype, 6–12 months to first paying customer", "goodFit": "People who can build (or hire to build) simple software, and are comfortable selling to local businesses.", "report": "reports/paid/micro-saas-local-business-2026.html", "paidLink": "https://buy.stripe.com/cNi7sMdqp8CW4cj2ws0RG0b", "reportPrice": 7},
@@ -585,7 +591,7 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     const checkerInput = document.getElementById('checkerInput');
-    const suggestionChips = document.getElementById('suggestionChips');
+
     const checkerResult = document.getElementById('checkerResult');
     const customReportForm = document.getElementById('customReportForm');
     const faqItems = document.querySelectorAll('.faq-item');
@@ -612,9 +618,7 @@
 
       let ctaButtons = '';
       if (hustle.reportPrice > 0 && hustle.paidLink) {
-        ctaButtons += `<a href="${hustle.paidLink}" target="_blank" class="btn-action">Get ${hustle.name} Report ($${hustle.reportPrice}) →</a>`;
-      } else if (hustle.freeReport) {
-        ctaButtons += `<a href="${hustle.freeReport}" target="_blank" class="btn-action">Read Free Report →</a>`;
+        ctaButtons += `<button type="button" class="btn-action" onclick="saveReportAndRedirect('${hustle.name}', '${hustle.paidLink}', ${hustle.reportPrice})">Get ${hustle.name} Report ($${hustle.reportPrice}) →</button>`;
       } else {
         ctaButtons += `<span class="badge-soon">Report coming soon</span>`;
       }
@@ -652,16 +656,21 @@
       }
     });
 
-    suggestionChips.addEventListener('click', (e) => {
-      if (e.target.classList.contains('chip')) {
-        const hustleName = e.target.dataset.hustle;
-        checkerInput.value = hustleName;
-        searchHustle(hustleName);
 
-        suggestionChips.querySelectorAll('.chip').forEach(chip => chip.classList.remove('active'));
-        e.target.classList.add('active');
-      }
-    });
+
+    // Dropdown handler
+    const hustleDropdown = document.getElementById('hustleDropdown');
+    if (hustleDropdown) {
+      hustleDropdown.addEventListener('change', (e) => {
+        const selectedHustle = e.target.value;
+        if (selectedHustle) {
+          checkerInput.value = selectedHustle;
+          searchHustle(selectedHustle);
+        } else {
+          checkerResult.classList.remove('show');
+        }
+      });
+    }
 
     customReportForm.addEventListener('submit', async (event) => {
       event.preventDefault();
@@ -671,7 +680,7 @@
       localStorage.setItem('customReportEmail', email);
       localStorage.setItem('customReportIdea', idea);
 
-      window.location.href = 'checkout.html';
+      window.location.href = 'pre-checkout.html?type=custom';
     });
 
     faqItems.forEach(item => {
@@ -690,12 +699,15 @@
       const event = new Event('input');
       checkerInput.dispatchEvent(event);
 
-      const matchingChip = document.querySelector(`.chip[data-hustle="${hustleParam}"]`);
-      if (matchingChip) {
-        matchingChip.classList.add('active');
-      }
+
     }
   });
+  function saveReportAndRedirect(name, paidLink, price) {
+    localStorage.setItem('selectedReportName', name);
+    localStorage.setItem('selectedReportPrice', price);
+    localStorage.setItem('selectedReportPaidLink', paidLink);
+    window.location.href = 'pre-checkout.html?type=paid';
+  }
 </script>
 
 </body>
